@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disability Resources</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+        /* Scoped widget styles */
+        .dbp-widget {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif !important;
+            max-width: 900px !important;
+            margin: 0 auto !important;
+            padding: 50px 20px 70px !important;
+            box-sizing: border-box !important;
+        }
+
+        .dbp-widget *,
+        .dbp-widget *::before,
+        .dbp-widget *::after {
+            box-sizing: border-box !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif !important;
+        }
+
+        .dbp-widget h1,
+        .dbp-widget h2 {
+            color: #0264b4 !important;
+            font-weight: 600 !important;
+            text-align: left !important;
+            margin-top: 0 !important;
+        }
+
+        .dbp-widget h3,
+        .dbp-widget h4 {
+            color: #059ce2 !important;
+            font-weight: 600 !important;
+            text-align: left !important;
+            margin-top: 0 !important;
+        }
+
+        .dbp-widget p,
+        .dbp-widget ul,
+        .dbp-widget label {
+            text-align: left !important;
+        }
+
+        .dbp-widget p,
+        .dbp-widget li {
+            line-height: 1.5 !important;
+            color: inherit !important;
+        }
+
+        .dbp-widget strong {
+            font-weight: 500 !important;
+        }
+
+        .dbp-widget a {
+            color: #0264b4 !important;
+        }
+
+        .dbp-widget section {
+            margin-bottom: 40px !important;
+        }
+
+        .dbp-widget hr.section-divider {
+            border: none !important;
+            border-top: 1px solid #ccc !important;
+            margin: 60px 0 !important;
+        }
+
+        /* Accordion */
+        .dbp-widget .benefit-item {
+            border: 1px solid #ccc !important;
+            border-radius: 10px !important;
+            overflow: hidden !important;
+            margin-bottom: 12px !important;
+        }
+
+        .dbp-widget .benefit-trigger {
+            cursor: pointer !important;
+            padding: 12px 15px !important;
+            background: #e8e8e8 !important;
+            user-select: none !important;
+        }
+
+        .dbp-widget .benefit-trigger:hover {
+            background: #dedede !important;
+        }
+
+        .dbp-widget .benefit-arrow {
+            display: inline-block !important;
+            margin-right: 8px !important;
+            font-size: 0.75em !important;
+            transition: transform 0.3s ease !important;
+            transform: rotate(0deg) !important;
+        }
+
+        .dbp-widget .benefit-trigger.open .benefit-arrow {
+            transform: rotate(90deg) !important;
+        }
+
+        .dbp-widget .benefit-title {
+            font-weight: 600 !important;
+            color: #000 !important;
+        }
+
+        /* Clip container — no background, just controls height */
+        .dbp-widget .benefit-content {
+            overflow: hidden !important;
+            max-height: 0;
+            transition: max-height 0.7s linear !important;
+        }
+
+        /* Inner wrapper — no grey, just padding */
+        .dbp-widget .benefit-content-inner {
+            padding: 15px !important;
+            background: transparent !important;
+        }
+
+        .dbp-widget .benefit-content-inner h3 {
+            margin-bottom: 16px !important;
+        }
+
+        .dbp-widget .benefit-content-inner h4 {
+            margin-top: 28px !important;
+            margin-bottom: 6px !important;
+        }
+
+        .dbp-widget .benefit-content-inner > :first-child {
+            margin-top: 0 !important;
+        }
+
+        .dbp-widget .benefit-content-inner p,
+        .dbp-widget .benefit-content-inner ul {
+            margin-top: 4px !important;
+            margin-bottom: 8px !important;
+        }
+
+        @media (min-width: 768px) {
+            .dbp-widget {
+                font-size: 16px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="dbp-widget">
+
+    <h1>Disability Resources</h1>
+
+    <section>
+        <p>Click on a heading below to expand contact and program information for that region.</p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+        <h2>Programs and Contacts</h2>
+
+        <!-- Federal -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('federal-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Federal Programs</span>
+            </div>
+            <div class="benefit-content" id="federal-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Disability Tax Credit (DTC) — CRA</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html" target="_blank">Disability Tax Credit — Canada.ca</a></li>
+                        <li><strong>Phone:</strong> 1-800-959-8281</li>
+                        <li><strong>TTY:</strong> 1-800-665-0354</li>
+                        <li><strong>Email:</strong> Not publicly listed — <a href="https://www.canada.ca/en/revenue-agency/corporate/contact-information.html" target="_blank">use CRA contact options</a></li>
+                    </ul>
+
+                    <h4>Canada Pension Plan Disability (CPP-D) — Service Canada</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp-disability-benefit.html" target="_blank">CPP Disability Benefit — Canada.ca</a></li>
+                        <li><strong>Phone (Canada/US):</strong> 1-800-277-9914</li>
+                        <li><strong>TTY:</strong> 1-800-255-4786</li>
+                        <li><strong>Email:</strong> Not publicly listed — <a href="https://www.canada.ca/en/employment-social-development/corporate/contact.html" target="_blank">use Service Canada contact options</a></li>
+                    </ul>
+
+                    <h4>Canada Child Benefit (CCB) and Child Disability Benefit (CDB) — CRA Child and Family Benefits</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/contact-information-child-family-benefits.html" target="_blank">Child and Family Benefits Contact — Canada.ca</a></li>
+                        <li><strong>Phone:</strong> 1-800-387-1193</li>
+                        <li><strong>Email:</strong> Not publicly listed — <a href="https://www.canada.ca/en/revenue-agency/corporate/contact-information.html" target="_blank">use CRA contact options</a></li>
+                    </ul>
+
+                    <h4>Registered Disability Savings Plan (RDSP) — ESDC / O-Canada</h4>
+                    <ul>
+                        <li><strong>Link (RDSP guide PDF):</strong> <a href="https://publications.gc.ca/collections/collection_2022/edsc-esdc/Em12-1-2021-eng.pdf" target="_blank">RDSP Guide (PDF)</a></li>
+                        <li><strong>Phone (O-Canada):</strong> 1-800-622-6232</li>
+                        <li><strong>TTY:</strong> 1-800-926-9105</li>
+                        <li><strong>Email:</strong> <a href="mailto:rdsp-reei@hrsdc-rhdcc.gc.ca">rdsp-reei@hrsdc-rhdcc.gc.ca</a></li>
+                    </ul>
+
+                    <h4>Veterans Affairs Canada (VAC) — Disability Benefits</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.veterans.gc.ca/en/financial-programs-and-services/compensation-illness-or-injury/disability-benefits" target="_blank">VAC Disability Benefits</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-866-522-2122</li>
+                        <li><strong>TTY:</strong> 1-833-921-0071</li>
+                        <li><strong>Email:</strong> Not publicly listed as a direct address — <a href="https://www.veterans.gc.ca/en/contact-us" target="_blank">VAC uses account messaging and contact channels</a></li>
+                    </ul>
+
+                    <h4>Non-Insured Health Benefits (NIHB) — Indigenous Services Canada</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.sac-isc.gc.ca/eng/1579274812116/1579708265237" target="_blank">NIHB — Indigenous Services Canada</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:nihb-ssna@sac-isc.gc.ca">nihb-ssna@sac-isc.gc.ca</a></li>
+                        <li><strong>Phone:</strong> Not listed on the headquarters contact page (regional/office numbers vary)</li>
+                        <li><strong>Ontario office invoice contact:</strong> <a href="mailto:onnihbinvoices-facturesssna@sac-isc.gc.ca">onnihbinvoices-facturesssna@sac-isc.gc.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Alberta -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('alberta-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Alberta Programs</span>
+            </div>
+            <div class="benefit-content" id="alberta-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Alberta Supports (general intake line for many programs)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.alberta.ca/alberta-supports" target="_blank">Alberta Supports</a></li>
+                        <li><strong>Phone:</strong> 1-877-644-9992</li>
+                        <li><strong>Email:</strong> No public direct email (uses an email contact form)</li>
+                    </ul>
+
+                    <h4>AISH (Assured Income for the Severely Handicapped)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.alberta.ca/contact-aish" target="_blank">Contact AISH — Alberta.ca</a></li>
+                        <li><strong>Phone:</strong> Varies by office (listed on the page). Example: 1-833-698-9959 and other regional lines.</li>
+                        <li><strong>Email:</strong> Varies by office (listed on the page)</li>
+                    </ul>
+
+                    <h4>AADL (Alberta Aids to Daily Living)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.alberta.ca/aadl-contact" target="_blank">AADL Contact — Alberta.ca</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:aadl.reception@gov.ab.ca">aadl.reception@gov.ab.ca</a></li>
+                        <li><strong>Phone:</strong> Not consistently shown on the contact page</li>
+                    </ul>
+
+                    <h4>Disability Related Employment Supports (DRES)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.alberta.ca/disability-related-employment-supports" target="_blank">DRES — Alberta.ca</a></li>
+                        <li><strong>Phone (Alberta Supports line):</strong> 1-877-644-9992</li>
+                        <li><strong>Email:</strong> Not provided as a direct email (uses Alberta Supports contact channels)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- British Columbia -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('bc-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">British Columbia Programs</span>
+            </div>
+            <div class="benefit-content" id="bc-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Disability Assistance (PWD)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www2.gov.bc.ca/gov/content/family-social-supports/services-for-people-with-disabilities/disability-assistance" target="_blank">Disability Assistance — BC.gov</a></li>
+                        <li><strong>Phone (income/disability assistance access line):</strong> 1-866-866-0800</li>
+                        <li><strong>Email:</strong> Not publicly listed as a direct program email</li>
+                    </ul>
+
+                    <h4>My Self Serve (Income and Disability Assistance online)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://myselfserve.gov.bc.ca/" target="_blank">My Self Serve</a></li>
+                        <li><strong>Phone (help line):</strong> 1-866-866-0800</li>
+                        <li><strong>Email:</strong> Not listed</li>
+                    </ul>
+
+                    <h4>BC PharmaCare</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/pharmacare-for-bc-residents/contact-us" target="_blank">BC PharmaCare Contact</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-800-663-7100</li>
+                        <li><strong>Phone (Lower Mainland):</strong> 604-683-7151</li>
+                        <li><strong>Email:</strong> Not listed on the official PharmaCare contact page</li>
+                    </ul>
+
+                    <h4>MSP Supplementary Benefits (MSP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://gov.bc.ca/supplementarybenefits" target="_blank">MSP Supplementary Benefits</a></li>
+                        <li><strong>Phone (HIBC):</strong> 1-800-663-7100</li>
+                        <li><strong>Email:</strong> Not listed</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Manitoba -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('mb-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Manitoba Programs</span>
+            </div>
+            <div class="benefit-content" id="mb-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Employment and Income Assistance (EIA)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.mb.ca/fs/eia/" target="_blank">EIA — Manitoba.ca</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-855-944-8111</li>
+                        <li><strong>Email:</strong> Not listed on the main program page</li>
+                    </ul>
+
+                    <h4>EIA for Persons with Disabilities</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.mb.ca/fs/eia/eia_disability.html" target="_blank">EIA for Persons with Disabilities</a></li>
+                        <li><strong>Phone (Winnipeg):</strong> 204-948-4000</li>
+                        <li><strong>Phone (toll-free):</strong> 1-855-944-8111</li>
+                        <li><strong>Email:</strong> Not listed on the program page</li>
+                    </ul>
+
+                    <h4>Manitoba Pharmacare</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.mb.ca/health/pharmacare/general.html" target="_blank">Manitoba Pharmacare</a></li>
+                        <li><strong>Phone:</strong> 204-786-7141</li>
+                        <li><strong>Toll-free:</strong> 1-800-297-8099</li>
+                        <li><strong>Email:</strong> <a href="mailto:pharmacare@gov.mb.ca">pharmacare@gov.mb.ca</a></li>
+                    </ul>
+
+                    <h4>Manitoba Supports for Persons with Disabilities</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://mb.211.ca/detail/85122229/" target="_blank">Manitoba Supports (211 Manitoba)</a></li>
+                        <li><strong>Phone:</strong> 204-948-6773</li>
+                        <li><strong>Toll-free:</strong> 1-877-830-1044</li>
+                        <li><strong>Email:</strong> <a href="mailto:manitobasupports@gov.mb.ca">manitobasupports@gov.mb.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- New Brunswick -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('nb-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">New Brunswick Programs</span>
+            </div>
+            <div class="benefit-content" id="nb-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Disability Support Program (Social Development)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://socialsupportsnb.ca/en/program/disability-support-program" target="_blank">Disability Support Program — Social Supports NB</a></li>
+                        <li><strong>Phone:</strong> 1-833-733-7835</li>
+                        <li><strong>Email:</strong> Not listed on the program page</li>
+                    </ul>
+
+                    <h4>Social Supports NB (program hub)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://socialsupportsnb.ca/" target="_blank">Social Supports NB</a></li>
+                        <li><strong>Phone/Email:</strong> Use the program pages for the specific service (hub page is informational)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Newfoundland and Labrador -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('nl-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Newfoundland and Labrador Programs</span>
+            </div>
+            <div class="benefit-content" id="nl-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Newfoundland and Labrador Disability Benefit (NLDB)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.nl.ca/sswb/newfoundland-and-labrador-disability-benefit/" target="_blank">NLDB — Government of NL</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:SSWBInfo@gov.nl.ca">SSWBInfo@gov.nl.ca</a></li>
+                        <li><strong>Fax:</strong> 1-709-729-6382</li>
+                        <li><strong>Phone:</strong> Not displayed on the program page (use department contact pathways on the page)</li>
+                    </ul>
+
+                    <h4>Disability Policy Office (NL)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.nl.ca/sswb/department/contact-dpo/" target="_blank">Contact the Disability Policy Office</a></li>
+                        <li><strong>Phone:</strong> 709-729-6279</li>
+                        <li><strong>Toll-free:</strong> 1-888-729-6279</li>
+                        <li><strong>Email:</strong> Listed on the department contact page</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Northwest Territories -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('nt-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Northwest Territories Programs</span>
+            </div>
+            <div class="benefit-content" id="nt-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Income Assistance — Government of Northwest Territories (GNWT)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ece.gov.nt.ca/en/services/income-assistance" target="_blank">Income Assistance — GNWT</a></li>
+                        <li><strong>Phone:</strong> 1-866-223-7775</li>
+                        <li><strong>Email:</strong> <a href="mailto:info.ece@gov.nt.ca">info.ece@gov.nt.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Nova Scotia -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('ns-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Nova Scotia Programs</span>
+            </div>
+            <div class="benefit-content" id="ns-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Disability Support Program (DSP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://novascotia.ca/coms/disabilities/index.html" target="_blank">Disability Support Program — Nova Scotia</a></li>
+                        <li><strong>Phone (apply/intake):</strong> 1-877-424-1177</li>
+                        <li><strong>Email:</strong> No direct email listed; uses an online email form (link on the DSP page)</li>
+                    </ul>
+
+                    <h4>Department of Opportunities and Social Development (OSD)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://novascotia.ca/coms/department/contact/index.html" target="_blank">OSD Contact — Nova Scotia</a></li>
+                        <li><strong>Phone (toll-free in NS):</strong> 1-877-424-1177</li>
+                        <li><strong>Email:</strong> Not listed for disability intake (uses office contacts/online options)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Nunavut -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('nu-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Nunavut Programs</span>
+            </div>
+            <div class="benefit-content" id="nu-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Income Assistance — Government of Nunavut</h4>
+                    <ul>
+                        <li><strong>Link (PDF):</strong> <a href="https://www.gov.nu.ca/sites/default/files/files/ia-printversion-eng.pdf" target="_blank">Income Assistance Office Contacts (PDF)</a></li>
+                        <li><strong>Phone/Email:</strong> Listed by community inside the PDF (no single territory-wide number)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Ontario -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('on-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Ontario Programs</span>
+            </div>
+            <div class="benefit-content" id="on-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Ontario Disability Support Program (ODSP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ontario.ca/page/ontario-disability-support-program" target="_blank">ODSP — Ontario.ca</a></li>
+                        <li><strong>Phone (social assistance contact):</strong> 1-888-789-4199</li>
+                        <li><strong>Email:</strong> No single province-wide ODSP email (local office emails vary — use the office locator from the ODSP page)</li>
+                    </ul>
+
+                    <h4>Assistive Devices Program (ADP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ontario.ca/page/assistive-devices-program" target="_blank">Assistive Devices Program — Ontario.ca</a></li>
+                        <li><strong>Phone:</strong> 1-800-268-6021</li>
+                        <li><strong>Email:</strong> <a href="mailto:adp@ontario.ca">adp@ontario.ca</a></li>
+                    </ul>
+
+                    <h4>Trillium Drug Program (TDP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ontario.ca/page/get-help-high-prescription-drug-costs" target="_blank">Trillium Drug Program — Ontario.ca</a></li>
+                        <li><strong>Phone:</strong> 1-800-575-5386</li>
+                        <li><strong>Email:</strong> <a href="mailto:trillium@ontariodrugbenefit.ca">trillium@ontariodrugbenefit.ca</a></li>
+                    </ul>
+
+                    <h4>Special Services at Home (SSAH)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ontario.ca/page/special-services-home" target="_blank">Special Services at Home — Ontario.ca</a></li>
+                        <li><strong>Phone/Email:</strong> Varies by region. Example (Oshawa office): Phone 1-800-722-1196, Email <a href="mailto:ssah-acsd-oshawa@ontario.ca">ssah-acsd-oshawa@ontario.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Prince Edward Island -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('pei-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Prince Edward Island Programs</span>
+            </div>
+            <div class="benefit-content" id="pei-content">
+                <div class="benefit-content-inner">
+
+                    <h4>AccessAbility Supports</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.princeedwardisland.ca/en/information/social-development-and-seniors/accessability-supports" target="_blank">AccessAbility Supports — PEI.ca</a></li>
+                        <li><strong>Phone (toll-free in PEI):</strong> 1-877-569-0546</li>
+                        <li><strong>Email:</strong> <a href="mailto:DeptSDS@gov.pe.ca">DeptSDS@gov.pe.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Quebec -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('qc-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Quebec Programs</span>
+            </div>
+            <div class="benefit-content" id="qc-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Social Assistance and Social Solidarity (financial assistance programs)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.quebec.ca/famille-et-soutien-aux-personnes/aide-sociale-et-solidarite-sociale" target="_blank">Social Assistance — Québec.ca</a></li>
+                        <li><strong>Phone (Montréal area):</strong> 514-873-4000</li>
+                        <li><strong>Phone (toll-free):</strong> 1-877-767-8773</li>
+                        <li><strong>Email:</strong> Not listed on the page</li>
+                    </ul>
+
+                    <h4>Retraite Québec (QPP disability and other pension services)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.retraitequebec.gouv.qc.ca/en/nous-joindre/Pages/telephone.aspx" target="_blank">Retraite Québec — Phone Contacts</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-800-463-5185</li>
+                        <li><strong>Phone (Montréal):</strong> 514-873-2433</li>
+                        <li><strong>Email:</strong> Not listed as a direct email on the phone contact page</li>
+                    </ul>
+
+                    <h4>Revenu Québec (individual general information line)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.revenuquebec.ca/fr/nous-joindre/renseignements-generaux-pour-les-citoyens/" target="_blank">Revenu Québec — Contact</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-800-267-6299</li>
+                        <li><strong>Email:</strong> Not listed on that page</li>
+                    </ul>
+
+                    <h4>RAMQ (health insurance and public drug plan administrator)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ramq.gouv.qc.ca/fr/nous-joindre" target="_blank">RAMQ — Contact</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-800-561-9749</li>
+                        <li><strong>Email:</strong> Not listed as a direct email (RAMQ provides "write to us" channels)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Saskatchewan -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('sk-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Saskatchewan Programs</span>
+            </div>
+            <div class="benefit-content" id="sk-content">
+                <div class="benefit-content-inner">
+
+                    <h4>SAID (Saskatchewan Assured Income for Disability)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.saskatchewan.ca/residents/family-and-social-support/people-with-disabilities/income-support-for-people-with-disabilities" target="_blank">SAID — Saskatchewan.ca</a></li>
+                        <li><strong>Phone:</strong> 1-888-567-7243</li>
+                        <li><strong>TTY:</strong> 1-866-995-0099</li>
+                        <li><strong>Email:</strong> Not listed on the program page</li>
+                    </ul>
+
+                    <h4>SAID Client Service Centre</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.saskatchewan.ca/government/directory?ou=bbe47cc7-386f-4ea9-a05b-2c8e932ea8fe" target="_blank">SAID Client Service Centre — Directory</a></li>
+                        <li><strong>Phone:</strong> 306-798-7243</li>
+                        <li><strong>Toll-free (SK only):</strong> 1-888-567-7243</li>
+                        <li><strong>Email:</strong> Not listed on the directory listing</li>
+                    </ul>
+
+                    <h4>SAIL (Saskatchewan Aids to Independent Living)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.saskatchewan.ca/residents/health/accessing-health-care-services/health-services-for-people-with-disabilities/sail" target="_blank">SAIL — Saskatchewan.ca</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-888-787-8996</li>
+                        <li><strong>Email:</strong> Not listed on the program page</li>
+                    </ul>
+
+                    <h4>SAIL — Government Directory Entry (includes email)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.saskatchewan.ca/government/directory?ou=a5d602b5-49e9-45ad-80ca-5d25180c7228" target="_blank">SAIL — Government Directory</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-888-787-8996</li>
+                        <li><strong>Email:</strong> <a href="mailto:EHB@health.gov.sk.ca">EHB@health.gov.sk.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Yukon -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('yt-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Yukon Programs</span>
+            </div>
+            <div class="benefit-content" id="yt-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Yukon Social Assistance</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://yukon.ca/en/health-and-wellness/social-supports/social-assistance" target="_blank">Social Assistance — Yukon.ca</a></li>
+                        <li><strong>Phone:</strong> 867-667-5674</li>
+                        <li><strong>Email:</strong> <a href="mailto:socialassistance@yukon.ca">socialassistance@yukon.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</div><!-- end .dbp-widget -->
+
+<script>
+    function toggleBenefit(contentId, trigger) {
+        const content = document.getElementById(contentId);
+        const isOpen = content.classList.toggle('open');
+        trigger.classList.toggle('open');
+
+        if (isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+            const scrollY = window.scrollY;
+            content.style.maxHeight = '0';
+            content.addEventListener('transitionend', function() {
+                window.scrollTo({ top: scrollY, behavior: 'instant' });
+            }, { once: true });
+        }
+    }
+</script>
+
+</body>
+</html>
