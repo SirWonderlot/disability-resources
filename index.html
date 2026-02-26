@@ -179,11 +179,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
         }
 
         .navigation-items.w-nav-menu {
             display: flex;
             align-items: center;
+            pointer-events: auto;
         }
 
         .navigation-item.w-nav-link {
@@ -231,6 +236,8 @@
 
         @media screen and (max-width: 991px) {
             .navigation.programs { padding: 12px 20px; }
+
+            .navigation.programs.w-nav::after { display: none; }
 
             .navigation .menu { justify-content: flex-end; }
 
