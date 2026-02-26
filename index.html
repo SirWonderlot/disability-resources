@@ -235,7 +235,8 @@
         }
 
         @media screen and (max-width: 991px) {
-            .navigation.programs { padding: 12px 20px 16px; }
+            .navigation.programs { padding: 20px 20px 28px; }
+            .navigation.programs.w-nav::after { display: block; left: 20px; right: 20px; width: auto; transform: none; }
 
             .navigation .menu { justify-content: flex-end; }
 
@@ -266,7 +267,8 @@
         }
 
         @media screen and (max-width: 479px) {
-            .navigation.programs { padding: 10px 15px; }
+            .navigation.programs { padding: 16px 15px; }
+            .navigation.programs.w-nav::after { left: 15px; right: 15px; }
         }
 
         @media (min-width: 768px) {
