@@ -3,16 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3.1 Disability Benefits Programs</title>
+    <title>Disability Resources</title>
     <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5e7d62bc968f476be6fd7ce2_flag-canada-circle-big.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Footer styles */
         body {
             margin: 0;
             font-family: Montserrat, sans-serif;
         }
 
+        /* Scoped widget styles */
+        .dbp-widget {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif !important;
+            max-width: 900px !important;
+            margin: 0 auto !important;
+            padding: 50px 20px 70px !important;
+            box-sizing: border-box !important;
+        }
+
+        .dbp-widget *,
+        .dbp-widget *::before,
+        .dbp-widget *::after {
+            box-sizing: border-box !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif !important;
+        }
+
+        .dbp-widget h1,
+        .dbp-widget h2 {
+            color: #0264b4 !important;
+            font-weight: 600 !important;
+            text-align: left !important;
+            margin-top: 0 !important;
+        }
+
+        .dbp-widget h3,
+        .dbp-widget h4 {
+            color: #059ce2 !important;
+            font-weight: 600 !important;
+            text-align: left !important;
+            margin-top: 0 !important;
+        }
+
+        .dbp-widget p,
+        .dbp-widget ul,
+        .dbp-widget label {
+            text-align: left !important;
+        }
+
+        .dbp-widget p,
+        .dbp-widget li {
+            line-height: 1.5 !important;
+            color: inherit !important;
+        }
+
+        .dbp-widget strong {
+            font-weight: 500 !important;
+        }
+
+        .dbp-widget a {
+            color: #0264b4 !important;
+        }
+
+        .dbp-widget section {
+            margin-bottom: 40px !important;
+        }
+
+        .dbp-widget hr.section-divider {
+            border: none !important;
+            border-top: 1px solid #ccc !important;
+            margin: 60px 0 !important;
+        }
+
+        /* Accordion */
+        .dbp-widget .benefit-item {
+            border: 1px solid #ccc !important;
+            border-radius: 10px !important;
+            overflow: hidden !important;
+            margin-bottom: 12px !important;
+        }
+
+        .dbp-widget .benefit-trigger {
+            cursor: pointer !important;
+            padding: 12px 15px !important;
+            background: #e8e8e8 !important;
+            user-select: none !important;
+        }
+
+        .dbp-widget .benefit-trigger:hover {
+            background: #dedede !important;
+        }
+
+        .dbp-widget .benefit-arrow {
+            display: inline-block !important;
+            margin-right: 8px !important;
+            font-size: 0.75em !important;
+            transition: transform 0.3s ease !important;
+            transform: rotate(0deg) !important;
+        }
+
+        .dbp-widget .benefit-trigger.open .benefit-arrow {
+            transform: rotate(90deg) !important;
+        }
+
+        .dbp-widget .benefit-title {
+            font-weight: 600 !important;
+            color: #000 !important;
+        }
+
+        /* Clip container — no background, just controls height */
+        .dbp-widget .benefit-content {
+            overflow: hidden !important;
+            max-height: 0;
+            transition: max-height 0.7s linear !important;
+        }
+
+        /* Inner wrapper — no grey, just padding */
+        .dbp-widget .benefit-content-inner {
+            padding: 15px !important;
+            background: transparent !important;
+        }
+
+        .dbp-widget .benefit-content-inner h3 {
+            margin-bottom: 16px !important;
+        }
+
+        .dbp-widget .benefit-content-inner h4 {
+            margin-top: 28px !important;
+            margin-bottom: 6px !important;
+        }
+
+        .dbp-widget .benefit-content-inner > :first-child {
+            margin-top: 0 !important;
+        }
+
+        .dbp-widget .benefit-content-inner p,
+        .dbp-widget .benefit-content-inner ul {
+            margin-top: 4px !important;
+            margin-bottom: 8px !important;
+        }
+
+        /* ===== Navigation ===== */
+        .navigation.programs.w-nav {
+            position: relative;
+            z-index: 1000;
+            background-color: white;
+        }
+
+        .navigation.programs.w-nav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            max-width: 100%;
+            height: 1px;
+            background: #ccc;
+        }
+
+        .navigation.programs {
+            display: flex;
+            align-items: center;
+            padding: 30px 50px;
+        }
+
+        .navigation-wrap {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .navigation .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .navigation-items.w-nav-menu {
+            display: flex;
+            align-items: center;
+            pointer-events: auto;
+        }
+
+        .navigation-item.w-nav-link {
+            opacity: 0.6;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 9px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 20px;
+            text-decoration: none;
+            color: #1a1b1f;
+            display: inline-block;
+            font-family: Montserrat, sans-serif;
+            transition: opacity 0.2s;
+        }
+
+        .navigation-item:hover { opacity: 0.9; }
+        .navigation-item.w--current { opacity: 1; font-weight: 600; }
+
+        .navigation .image-4 {
+            display: block;
+            width: 38px;
+            height: auto;
+            margin: 0 6px;
+        }
+
+        /* Hamburger — hidden on desktop */
+        .menu-button.w-nav-button {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            background: none;
+            border: none;
+            z-index: 1;
+            position: relative;
+            pointer-events: auto;
+        }
+
+        .menu-icon.menu-flag {
+            display: block;
+            height: 28px;
+            width: auto;
+        }
+
+        @media screen and (max-width: 991px) {
+            .navigation.programs { padding: 20px 20px 28px; }
+            .navigation.programs.w-nav::after { display: block; left: 20px; right: 20px; width: auto; transform: none; }
+
+            .navigation .menu { justify-content: flex-end; }
+
+            .navigation-items.w-nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 10px 0;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+                z-index: 999;
+            }
+
+            .navigation-items.w-nav-menu.nav-open { display: flex; }
+
+            .navigation-item.w-nav-link {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 10px 20px;
+            }
+
+            .navigation .image-4 { display: none; }
+            .menu-button.w-nav-button { display: block; }
+        }
+
+        @media screen and (max-width: 479px) {
+            .navigation.programs { padding: 16px 15px; }
+            .navigation.programs.w-nav::after { left: 15px; right: 15px; }
+        }
+
+        @media (min-width: 768px) {
+            .dbp-widget {
+                font-size: 16px !important;
+            }
+        }
+
+        /* ===== Footer ===== */
         .section.footer.rebuild.profile {
             background-color: #757474;
             width: auto;
@@ -30,7 +295,6 @@
             padding-right: 20px;
         }
 
-        /* Logo row — centered */
         .footer-div {
             display: flex;
             justify-content: center;
@@ -41,7 +305,6 @@
             display: block;
         }
 
-        /* Two-column link row — flex, centered */
         .footer-row.w-row {
             display: flex;
             justify-content: center;
@@ -49,7 +312,6 @@
             padding: 15px 0 20px;
         }
 
-        /* Left column: right-align text, right border = divider */
         .footer-col.w-col.footer-left-col {
             width: 240px;
             flex-shrink: 0;
@@ -58,7 +320,6 @@
             border-right: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        /* Right column: left-align text */
         .footer-col.w-col.footer-right-col {
             width: 240px;
             flex-shrink: 0;
@@ -89,14 +350,12 @@
             opacity: 0.75;
         }
 
-        /* Full-width divider above copyright */
         .footer-full-divider {
             width: 100%;
             height: 1px;
             background-color: rgba(255, 255, 255, 0.3);
         }
 
-        /* Bottom copyright row */
         .footer-bottom.footer-container {
             padding-top: 12px;
             padding-bottom: 14px;
@@ -148,1522 +407,492 @@
                 padding-left: 0;
             }
         }
-
-        /* ===== Navigation ===== */
-        .navigation.programs.w-nav {
-            position: relative;
-            z-index: 1000;
-            background-color: white;
-        }
-
-        .navigation.programs.w-nav::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 900px;
-            max-width: 100%;
-            height: 1px;
-            background: #ccc;
-        }
-
-        .navigation.programs {
-            display: flex;
-            align-items: center;
-            padding: 30px 50px;
-        }
-
-        .navigation-wrap {
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-
-        .logo-link.w-nav-brand {
-            z-index: 1;
-            text-decoration: none;
-            color: #1a1b1f;
-            display: inline-block;
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .logo-link:hover { opacity: 0.8; }
-        .logo-link:active { opacity: 0.7; }
-
-        .navigation .columns-5.w-row {
-            display: flex;
-            align-items: center;
-        }
-
-        .navigation .w-col {
-            float: none;
-            width: auto;
-            padding: 0;
-        }
-
-        .navigation .image.logo {
-            display: block;
-            width: 42px;
-            height: auto;
-        }
-
-        .navigation .text-block {
-            padding-left: 10px;
-            font-family: Montserrat, sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: #1a1b1f;
-            white-space: nowrap;
-        }
-
-        /* Menu: absolutely covers nav-wrap, centers items, passes clicks through */
-        .navigation .menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .navigation-items.w-nav-menu {
-            display: flex;
-            align-items: center;
-            pointer-events: auto;
-        }
-
-        .navigation-item.w-nav-link {
-            opacity: 0.6;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 9px 10px;
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 20px;
-            text-decoration: none;
-            color: #1a1b1f;
-            display: inline-block;
-            font-family: Montserrat, sans-serif;
-            transition: opacity 0.2s;
-        }
-
-        .navigation-item:hover { opacity: 0.9; color: #32343a; }
-        .navigation-item.w--current { opacity: 1; font-weight: 600; }
-        .navigation-item.faq { padding-left: 10px; margin-right: 10px; }
-        .navigation-item.contact { padding-left: 10px; }
-
-        .navigation .image-4 {
-            display: block;
-            width: 38px;
-            height: auto;
-            margin: 0 6px;
-        }
-
-        /* Hamburger — hidden on desktop */
-        .menu-button.w-nav-button {
-            display: none;
-            cursor: pointer;
-            padding: 10px;
-            background: none;
-            border: none;
-            z-index: 1;
-            position: relative;
-            pointer-events: auto;
-        }
-
-        .menu-icon.menu-flag {
-            display: block;
-            height: 28px;
-            width: auto;
-        }
-
-        @media screen and (max-width: 991px) {
-            .navigation.programs { padding: 20px 20px 28px; }
-            .navigation.programs.w-nav::after { display: block; left: 20px; right: 20px; width: auto; transform: none; }
-
-            /* Push hamburger to far right */
-            .navigation .menu { justify-content: flex-end; }
-
-            /* Nav items become a full-width dropdown */
-            .navigation-items.w-nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                padding: 10px 0;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-                z-index: 999;
-            }
-
-            .navigation-items.w-nav-menu.nav-open { display: flex; }
-
-            .navigation-item.w-nav-link {
-                display: block;
-                width: 100%;
-                text-align: center;
-                padding: 10px 20px;
-            }
-
-            .navigation .image-4 { display: none; }
-            .menu-button.w-nav-button { display: block; }
-        }
-
-        @media screen and (max-width: 479px) {
-            .navigation.programs { padding: 16px 15px; }
-            .navigation.programs.w-nav::after { left: 15px; right: 15px; }
-            .navigation .text-block { font-size: 13px; }
-        }
-
-        /* Scoped reset — overrides Webflow global styles inside our widget */
-        .dbp-widget {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif !important;
-            max-width: 900px !important;
-            margin: 0 auto !important;
-            padding: 50px 20px 70px !important;
-            box-sizing: border-box !important;
-        }
-
-        .dbp-widget *,
-        .dbp-widget *::before,
-        .dbp-widget *::after {
-            box-sizing: border-box !important;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif !important;
-        }
-
-        .dbp-widget h1,
-        .dbp-widget h2,
-        .dbp-widget h3,
-        .dbp-widget h4 {
-            font-weight: 600 !important;
-            text-align: left !important;
-            margin-top: 0 !important;
-        }
-
-        .dbp-widget h1,
-        .dbp-widget h2 {
-            color: #0264b4 !important;
-        }
-
-        .dbp-widget h3,
-        .dbp-widget h4 {
-            color: #059ce2 !important;
-        }
-
-        .dbp-widget p,
-        .dbp-widget ul,
-        .dbp-widget label {
-            text-align: left !important;
-        }
-
-        .dbp-widget p,
-        .dbp-widget li {
-            line-height: 1.5 !important;
-            color: inherit !important;
-        }
-
-        .dbp-widget strong {
-            font-weight: 600 !important;
-        }
-
-        .dbp-widget a {
-            color: #0264b4 !important;
-        }
-
-        .dbp-widget section {
-            margin-bottom: 40px !important;
-        }
-
-        .dbp-widget hr.section-divider {
-            border: none !important;
-            border-top: 1px solid #ccc !important;
-            margin: 60px 0 !important;
-        }
-
-        .dbp-widget .indented-title {
-            padding-left: 15px !important;
-        }
-
-        /* ── Benefits accordion ── */
-        .dbp-widget .benefit-item {
-            border: 1px solid #ccc !important;
-            border-radius: 10px !important;
-            overflow: hidden !important;
-            margin-bottom: 12px !important;
-        }
-
-        .dbp-widget .benefit-trigger {
-            cursor: pointer !important;
-            padding: 12px 15px !important;
-            background: #e8e8e8 !important;
-            user-select: none !important;
-        }
-
-        .dbp-widget .benefit-trigger:hover {
-            background: #dedede !important;
-        }
-
-        .dbp-widget .benefit-arrow {
-            display: inline-block !important;
-            margin-right: 8px !important;
-            font-size: 0.75em !important;
-            transition: transform 0.3s ease !important;
-            transform: rotate(0deg) !important;
-        }
-
-        .dbp-widget .benefit-trigger.open .benefit-arrow,
-        .dbp-widget .next-step-trigger.open .benefit-arrow {
-            transform: rotate(90deg) !important;
-        }
-
-        .dbp-widget .benefit-number {
-            font-weight: 400 !important;
-            color: #000 !important;
-        }
-
-        .dbp-widget .benefit-title {
-            font-weight: 600 !important;
-            color: #000 !important;
-        }
-
-        /* Outer clip container — no padding, just clips the inner */
-        .dbp-widget .benefit-content {
-            overflow: hidden !important;
-            max-height: 0;
-            transition: max-height 0.7s linear !important;
-        }
-
-        /* Inner wrapper holds padding and background */
-        .dbp-widget .benefit-content-inner {
-            padding: 15px !important;
-            background: transparent !important;
-        }
-
-        .dbp-widget .benefit-content-inner h4 {
-            margin-top: 32px !important;
-            margin-bottom: 6px !important;
-        }
-
-        .dbp-widget .benefit-content-inner > :first-child {
-            margin-top: 0 !important;
-        }
-
-        .dbp-widget .benefit-content-inner p,
-        .dbp-widget .benefit-content-inner ul {
-            margin-top: 4px !important;
-            margin-bottom: 8px !important;
-        }
-
-        /* "Provide more information" checkbox row */
-        .dbp-widget .more-info-row {
-            margin-top: 28px !important;
-            padding-top: 16px !important;
-            border-top: 1px solid #ccc !important;
-        }
-
-        .dbp-widget .more-info-row label {
-            color: #0264b4 !important;
-            font-weight: 500 !important;
-            cursor: pointer !important;
-        }
-
-        .dbp-widget .more-info-row input[type="checkbox"] {
-            accent-color: #0264b4 !important;
-            margin-right: 6px !important;
-        }
-
-        /* ── Next Steps section ── */
-        .dbp-widget .next-steps-section {
-            display: none !important;
-        }
-
-        .dbp-widget .next-steps-section.visible {
-            display: block !important;
-        }
-
-        /* Outer wrapper — hidden until checkbox checked */
-        .dbp-widget .next-step-item {
-            display: none !important;
-            border: 1px solid #ccc !important;
-            border-radius: 10px !important;
-            overflow: hidden !important;
-            margin-bottom: 12px !important;
-        }
-
-        .dbp-widget .next-step-item.visible {
-            display: block !important;
-        }
-
-        /* Trigger bar — slightly darker blue-grey */
-        .dbp-widget .next-step-trigger {
-            cursor: pointer !important;
-            padding: 12px 15px !important;
-            background: #c8ddf0 !important;
-            user-select: none !important;
-        }
-
-        .dbp-widget .next-step-trigger:hover {
-            background: #b8d0e8 !important;
-        }
-
-        /* Outer clip container */
-        .dbp-widget .next-step-content {
-            overflow: hidden !important;
-            max-height: 0;
-            transition: max-height 0.7s linear !important;
-        }
-
-        /* Inner wrapper holds padding and background */
-        .dbp-widget .next-step-content-inner {
-            padding: 15px !important;
-            background: transparent !important;
-        }
-
-        .dbp-widget .next-step-content-inner h4 {
-            margin-top: 32px !important;
-            margin-bottom: 6px !important;
-        }
-
-        .dbp-widget .next-step-content-inner > :first-child {
-            margin-top: 0 !important;
-        }
-
-        .dbp-widget .next-step-content-inner p,
-        .dbp-widget .next-step-content-inner ul {
-            margin-top: 4px !important;
-            margin-bottom: 8px !important;
-        }
-
-        /* ── Apply Now flow ── */
-        .dbp-widget .apply-now-row {
-            margin-top: 16px !important;
-        }
-
-        .dbp-widget .apply-now-row label {
-            color: #0264b4 !important;
-            font-weight: 500 !important;
-            cursor: pointer !important;
-        }
-
-        .dbp-widget .apply-now-row input[type="checkbox"] {
-            accent-color: #0264b4 !important;
-            margin-right: 6px !important;
-        }
-
-        .dbp-widget .content-divider {
-            border: none !important;
-            border-top: 1px solid #ccc !important;
-            margin: 16px 0 !important;
-        }
-
-        .dbp-widget .apply-section {
-            overflow: hidden !important;
-            max-height: 0;
-            transition: max-height 0.3s ease !important;
-        }
-
-        .dbp-widget .eligibility-checklist label {
-            display: flex !important;
-            align-items: flex-start !important;
-            margin-bottom: 8px !important;
-            cursor: pointer !important;
-        }
-
-        .dbp-widget .eligibility-checklist input[type="checkbox"] {
-            accent-color: #0264b4 !important;
-            margin-right: 6px !important;
-            flex-shrink: 0 !important;
-            margin-top: 3px !important;
-        }
-
-        .dbp-widget .apply-methods {
-            overflow: hidden !important;
-            max-height: 0;
-            transition: max-height 0.3s ease !important;
-        }
-
-        .dbp-widget .apply-methods .eligibility-checklist label {
-            color: #0264b4 !important;
-            font-weight: 500 !important;
-            font-size: 1em !important;
-            margin-bottom: 12px !important;
-        }
-
-        .dbp-widget .apply-methods .eligibility-checklist label strong {
-            margin-right: 5px !important;
-        }
-
-        .dbp-widget .apply-methods .eligibility-checklist input[type="checkbox"] {
-            accent-color: #0264b4 !important;
-            margin-top: 2px !important;
-        }
-
-        .dbp-widget .more-info-row label {
-            font-size: 1em !important;
-        }
-
-
-        /* ── GAP Continue button ── */
-        .gap-continue-section {
-            display: none;
-            padding-top: 8px;
-        }
-
-        .dbp-widget .gap-continue-section .content-divider {
-            margin-top: 8px !important;
-            margin-bottom: 24px !important;
-        }
-
-        .dbp-widget .gap-continue-btn {
-            display: inline-block !important;
-            background: #e8e8e8 !important;
-            border-radius: 10px !important;
-            padding: 10px 28px !important;
-            font-size: inherit !important;
-            font-weight: 600 !important;
-            color: #1a1b1f !important;
-            text-decoration: none !important;
-            cursor: pointer !important;
-            transition: background 0.2s !important;
-        }
-
-        .dbp-widget .gap-continue-btn:hover {
-            background: #dedede !important;
-        }
-
-        @media (min-width: 768px) {
-        .dbp-widget {
-        font-size: 16px !important;
-        }
-    }
     </style>
 </head>
 <body>
 
-<div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation programs w-nav"><div class="navigation-wrap"><a href="/cdsb-eligibility" class="logo-link w-nav-brand"><div class="columns-5 w-row"><div class="column-6 w-col w-col-6 w-col-medium-6"></div><div class="column-5 w-col w-col-6 w-col-medium-6"></div></div></a><div class="menu"><nav role="navigation" class="navigation-items w-nav-menu"><a href="https://www.rdspcanada.ca/cdsb-eligibility" class="navigation-item w-nav-link">Disability Bond</a><a href="https://benefits.rdspcanada.ca/programs.html" class="navigation-item w-nav-link">Benefits Programs</a><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5e7d62bc968f476be6fd7ce2_flag-canada-circle-big.png" loading="lazy" width="50" alt="" class="image-4"><a href="https://www.rdspcanada.ca/programs/additional-programs" class="navigation-item w-nav-link">Additional Programs</a><a href="https://resources.rdspcanada.ca/" class="navigation-item w-nav-link">Resources</a></nav><div class="menu-button w-nav-button" aria-label="menu" role="button" tabindex="0" aria-expanded="false"><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5f66ba195f18246d973acac7_menu-mobile.png" height="30" alt="" class="menu-icon menu-flag"></div></div></div></div>
+<div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation programs w-nav"><div class="navigation-wrap"><a href="/cdsb-eligibility" class="logo-link w-nav-brand"><div class="columns-5 w-row"><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5e7d62bc968f476be6fd7ce2_flag-canada-circle-big.png" loading="lazy" width="42" alt="" class="image logo"><span class="text-block">RDSP Canada</span></div></a><div class="menu"><nav role="navigation" class="navigation-items w-nav-menu"><a href="https://www.rdspcanada.ca/cdsb-eligibility" class="navigation-item w-nav-link">Disability Bond</a><a href="https://benefits.rdspcanada.ca/programs.html" class="navigation-item w-nav-link">Benefits Programs</a><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5e7d62bc968f476be6fd7ce2_flag-canada-circle-big.png" loading="lazy" width="50" alt="" class="image-4"><a href="https://www.rdspcanada.ca/programs/additional-programs" class="navigation-item w-nav-link">Additional Programs</a><a href="https://resources.rdspcanada.ca/" class="navigation-item w-nav-link">Resources</a></nav><div class="menu-button w-nav-button" aria-label="menu" role="button" tabindex="0" aria-expanded="false"><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5f66ba195f18246d973acac7_menu-mobile.png" height="30" alt="" class="menu-icon menu-flag"></div></div></div></div>
 
 <div class="dbp-widget">
 
-    <h2>3.1 Disability Benefits Programs</h2>
+    <h2>5.1 Disability Resources</h2>
 
     <section>
-        <p><p>This tool provides an overview of disability benefits programs available to eligible Canadians. Each program is
-            summarized below — select any program to expand it and learn about benefit amounts and eligibility requirements.</p>
-        <p>If you would like guidance on how to apply for a specific program, check the "Provide more information" box at the
-            bottom of that program's summary. A personalized Next Steps section will appear at the bottom of the page with
-            step-by-step application instructions.</p></p>
-    </section>
-
-    <hr class="section-divider">
-
-    <section>
-        <h2>3.2 Summary of Benefits Programs</h2>
+        <h2 style="font-size: 1em !important;">How to Use This Page</h2>
+        <p>This page is designed to help you quickly find contact information and access points for disability benefit programs across Canada.</p>
+        <p>At the top of the page, you will see expandable sections labeled Federal Programs and each Province or Territory. These sections organize programs by region so you can easily locate the services that apply to you.</p>
+        <p>To use the page, simply click on the heading for the region you want. For example, click Federal Programs to view nationwide disability programs, or click your province (such as Alberta, Ontario, etc.) to see programs available in that specific region.</p>
+        <p>When you click a heading, it will expand and display detailed information, which may include:</p>
         <ul>
-            <li>Canada Disability Benefit (CDB)</li>
-            <li>Disability Tax Credit (DTC)</li>
-            <li>Guaranteed Access Program (GAP)</li>
-            <li>Canadian Dental Care Plan (CDCP)</li>
-            <li>Canada Pension Plan Disability (CPP-D)</li>
-            <li>Registered Disability Savings Plan (RDSP)</li>
+            <li>Program names</li>
+            <li>Direct website links</li>
+            <li>Phone numbers</li>
+            <li>Email or contact form information</li>
+            <li>A short description of what the program provides</li>
         </ul>
+        <p>Review the listed programs and use the provided contact details or links to reach the appropriate government department or service. These contacts will guide you on eligibility, applications, and accessing disability benefits available to you.</p>
+        <p>You may open and close different regions at any time to compare programs or find additional supports.</p>
     </section>
 
     <hr class="section-divider">
 
     <section>
-        <h2 class="indented-title">3.3 Benefits Programs</h2>
+        <h2>5.2 Programs and Contacts</h2>
 
-        <!-- 1.1 Canada Disability Benefit -->
+        <!-- Federal -->
         <div class="benefit-item">
-            <div class="benefit-trigger" onclick="toggleBenefit('cdb-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">3.3.1</span>&nbsp;<span class="benefit-title">Canada Disability Benefit (CDB)</span>
+            <div class="benefit-trigger" onclick="toggleBenefit('federal-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Federal Programs</span>
             </div>
-            <div class="benefit-content" id="cdb-content">
+            <div class="benefit-content" id="federal-content">
                 <div class="benefit-content-inner">
 
-                    <p>The Canada Disability Benefit is a new federal income-tested benefit that provides annual financial support to eligible working-age individuals with severe and prolonged disabilities. The benefit provides monthly payments based on your income tax information from the previous year. Once approved, you do not need to reapply annually—Service Canada will review your eligibility each year automatically.</p>
-
-                    <h4>Benefit Amount</h4>
+                    <h4>Disability Tax Credit (DTC) — CRA</h4>
                     <ul>
-                        <li><strong>Maximum Payment:</strong> $200 per month or $2,400 per year</li>
-                        <li><strong>Payment Schedule:</strong> Payments are issued on the third Thursday of each month</li>
+                        <li><strong>Link:</strong> <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/tax-credits-deductions-persons-disabilities/disability-tax-credit.html" target="_blank">Disability Tax Credit — Canada.ca</a></li>
+                        <li><strong>Phone:</strong> 1-800-959-8281</li>
+                        <li><strong>TTY:</strong> 1-800-665-0354</li>
+                        <li><strong>Email:</strong> Not publicly listed — <a href="https://www.canada.ca/en/revenue-agency/corporate/contact-information.html" target="_blank">use CRA contact options</a></li>
                     </ul>
 
-                    <h4>Eligibility Requirements</h4>
-                    <p>To qualify for the Canada Disability Benefit, you must meet all of the following criteria:</p>
+                    <h4>Canada Pension Plan Disability (CPP-D) — Service Canada</h4>
                     <ul>
-                        <li>Be approved for the Disability Tax Credit (DTC)</li>
-                        <li>Be aged 18–64 years</li>
-                        <li>Have filed a 2024 federal tax return (you and your spouse/common-law partner, if applicable)</li>
-                        <li>Be a Canadian resident for tax purposes</li>
-                        <li>Have one of these statuses: Canadian citizen, permanent resident, registered under the Indian Act, or temporary resident in Canada for 18+ months</li>
-                        <li>Not be incarcerated in federal prison for 2+ years</li>
-                    </ul>
-
-                    <h4>Retroactive Payments</h4>
-                    <p>The Canada Disability Benefit can provide retroactive payments for up to 24 months from when your application is received and approved, but payments cannot extend to any period before June 2025.</p>
-
-                    <div class="apply-now-row">
-                        <hr class="content-divider">
-                        <label>
-                            <input type="checkbox" id="checkbox-apply-cdb" onchange="toggleApplySection('cdb-apply-section', this.checked)">
-                            Apply Now
-                        </label>
-                    </div>
-
-                    <div class="apply-section" id="cdb-apply-section">
-                        <hr class="content-divider">
-                        <p><strong>To apply, you must have the following</strong>(check all that apply)<strong>:</strong></p>
-                        <div class="eligibility-checklist">
-                            <label><input type="checkbox" class="elig-cdb" onchange="checkAllEligibility('elig-cdb', 'cdb-apply-methods')"> Disability Tax Credit qualification</label>
-                            <label><input type="checkbox" class="elig-cdb" onchange="checkAllEligibility('elig-cdb', 'cdb-apply-methods')"> Be aged 18–64 years</label>
-                            <label><input type="checkbox" class="elig-cdb" onchange="checkAllEligibility('elig-cdb', 'cdb-apply-methods')"> Have filed a 2024 federal tax return (you and your spouse/common-law partner, if applicable)</label>
-                            <label><input type="checkbox" class="elig-cdb" onchange="checkAllEligibility('elig-cdb', 'cdb-apply-methods')"> Be a Canadian resident for tax purposes</label>
-                            <label><input type="checkbox" class="elig-cdb" onchange="checkAllEligibility('elig-cdb', 'cdb-apply-methods')"> Have one of these statuses: Canadian citizen, permanent resident, registered under the Indian Act, or temporary resident in Canada for 18+ months</label>
-                            <label><input type="checkbox" class="elig-cdb" onchange="checkAllEligibility('elig-cdb', 'cdb-apply-methods')"> Not be incarcerated in federal prison for 2+ years</label>
-                        </div>
-
-                        <div class="apply-methods" id="cdb-apply-methods">
-                            <hr class="content-divider">
-
-                            <h4>Application Methods</h4>
-                            <p>You can apply online through the Service Canada portal, by mail, or in person:</p>
-                            <ul>
-                                <li><strong>Online (Recommended):</strong> Apply through the Service Canada online portal</li>
-                                <li><strong>By Mail or In Person:</strong> Complete a printable application form and mail it to Service Canada Centre, CDB Processing Centre, P.O. Box 60, Boucherville, QC J4B 5E6, or drop it off at your nearest Service Canada office</li>
-                            </ul>
-
-                            <h4>Letter From Service Canada</h4>
-                            <ul>
-                                <li><strong>If You Have Received a Letter:</strong> The government is sending letters in June 2025 to people already approved for the Disability Tax Credit who meet most eligibility criteria. The letter includes a unique application code.</li>
-                                <li><strong>If You Didn't Receive a Letter:</strong> You can still apply—just complete the full application form without the code.</li>
-                            </ul>
-
-                            <h4>Processing Time</h4>
-                            <p>It may take up to 28 calendar days for Service Canada to process your application, or up to 49 days if you are applying on behalf of someone else as their legal representative.</p>
-
-                            <h4>Apply Online</h4>
-                            <p>To apply online, click: <a href="https://www.canada.ca/en/services/benefits/disability/canada-disability-benefit/apply.html" target="_blank">Canada Disability Benefit | Apply Online</a></p>
-
-                            <h4>Further Assistance</h4>
-                            <p>Service Canada CDB Call Center:</p>
-                            <ul>
-                                <li><strong>Phone:</strong> 1-833-486-3007</li>
-                                <li><strong>TTY:</strong> 1-833-467-2700</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 1.2 Disability Tax Credit -->
-        <div class="benefit-item">
-            <div class="benefit-trigger" onclick="toggleBenefit('dtc-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">3.3.2</span>&nbsp;<span class="benefit-title">Disability Tax Credit (DTC)</span>
-            </div>
-            <div class="benefit-content" id="dtc-content">
-                <div class="benefit-content-inner">
-
-                    <p>The Disability Tax Credit is a non-refundable tax credit that helps people with disabilities, or their supporting family member, reduce the amount of income tax they may have to pay. If your application is approved, you may claim the disability amount on your tax return. The DTC is non-refundable, meaning it can help you pay less taxes, but you will not get any money back.</p>
-
-                    <h4>Benefit Amount</h4>
-                    <ul>
-                        <li><strong>Base Amount:</strong> $10,138 for 2025</li>
-                        <li><strong>Supplement for Children:</strong> An additional $5,914 for individuals under 18 years of age</li>
-                        <li><strong>Provincial Credit:</strong> An additional provincial tax credit is also available (varies by province, typically 5–10% of the disability amount)</li>
-                        <li><strong>Retroactive Claims:</strong> The credits can be claimed retroactively, going back up to 10 years</li>
-                    </ul>
-
-                    <h4>Eligibility Requirements</h4>
-                    <p>You may be eligible for the DTC if a medical practitioner certifies that you have a severe and prolonged impairment in one of the categories, significant limitations in two or more categories, or receive therapy to support a vital function. Your impairment must meet the following criteria:</p>
-                    <ul>
-                        <li>You are unable to do the activity, or it takes 3 times longer than someone of similar age without the impairment, even with the use of appropriate therapy, medication, and devices</li>
-                        <li>This restriction is present all or almost all of the time (generally at least 90%)</li>
-                        <li>The restriction has lasted or is expected to last for a continuous period of at least 12 months</li>
-                    </ul>
-
-                    <h4>Income Requirements</h4>
-                    <p>All income levels should apply for the DTC. The DTC is available to individuals with any level of income, including patients receiving disability assistance, patients who work full time, and those with no income.</p>
-                    <p><strong>Why apply even with no income:</strong> Being approved for the DTC can help you get access to other federal, provincial, or territorial programs. The DTC is a prerequisite for several important benefits and programs, making it essential to apply regardless of your income level.</p>
-
-                    <h4>When to Apply</h4>
-                    <p>Apply any time using the digital application form or paper form. Apply for the DTC if you think you may be eligible, even if you have no income to report. If the CRA approves your application, the DTC may help you access other federal programs.</p>
-
-                    <h4>Programs the DTC Provides Access To</h4>
-                    <p>Being approved for the DTC unlocks eligibility for many other federal, provincial, and territorial benefits:</p>
-                    <ul>
-                        <li><strong>Canada Disability Benefit (CDB)</strong> — Monthly payment of up to $200 for low-income individuals with disabilities</li>
-                        <li><strong>Registered Disability Savings Plan (RDSP)</strong> — Long-term savings plan with government grants and bonds</li>
-                        <li><strong>Child Disability Benefit</strong> — Monthly tax-free payment up to $284.25 per child for families caring for a child under 18 who is eligible for the DTC</li>
-                        <li><strong>Canada Workers Benefit (CWB) Disability Supplement</strong> — Additional amount up to $843 for persons with disabilities approved for the DTC</li>
-                        <li><strong>Home Accessibility Tax Credit</strong> — Non-refundable tax credit for eligible home renovations</li>
-                        <li><strong>Canada Caregiver Credit</strong> — Non-refundable tax credit for individuals supporting a family member with a disability</li>
-                        <li><strong>Canadian Dental Care Plan</strong> — Access to dental coverage</li>
-                        <li><strong>Medical Expense Tax Deduction</strong> — Enhanced ability to claim medical expenses</li>
-                        <li><strong>Home Buyers' Amount</strong> — Tax credit available without being a first-time home buyer if DTC-eligible</li>
-                    </ul>
-
-                    <div class="more-info-row">
-                        <label>
-                            <input type="checkbox" id="checkbox-dtc" onchange="toggleApplySection('dtc-apply-section', this.checked)">
-                            Provide more information
-                        </label>
-                    </div>
-
-                    <div class="apply-section" id="dtc-apply-section">
-                        <hr class="content-divider">
-                        <p><strong>Please confirm the following</strong> (check all that apply):</p>
-                        <div class="eligibility-checklist">
-                            <label><input type="checkbox" class="elig-dtc" onchange="checkAllEligibility('elig-dtc', 'dtc-apply-methods')"> I have a prolonged medical condition(s) that has lasted or is expected to last for a continuous period of at least 12 months</label>
-                            <label><input type="checkbox" class="elig-dtc" onchange="checkAllEligibility('elig-dtc', 'dtc-apply-methods')"> This condition/restriction is present all or almost all of the time (generally at least 90%)</label>
-                            <label><input type="checkbox" class="elig-dtc" onchange="checkAllEligibility('elig-dtc', 'dtc-apply-methods')"> You are unable to do the activity, or it takes 3 times longer than someone of similar age without the impairment, even with the use of appropriate therapy, medication, and devices (or it takes 14+ hours in a week to manage your condition, for example, insulin for diabetes)</label>
-                        </div>
-
-                        <div class="apply-methods" id="dtc-apply-methods">
-                            <hr class="content-divider">
-
-                            <h4>Application Process</h4>
-                            <p>To apply for the DTC, you must complete Form T2201 (Disability Tax Credit Certificate), which has two parts:</p>
-                            <ul>
-                                <li><strong>Part A:</strong> Completed by you (the applicant)</li>
-                                <li><strong>Part B:</strong> Completed and certified by a qualified medical practitioner (doctor, nurse practitioner, or specialist)</li>
-                            </ul>
-                            <p>The CRA evaluates your application based on functional limitations (how your condition affects daily activities), not the diagnosis itself.</p>
-
-                            <h4>When to Apply on Your Own</h4>
-                            <p><strong>Best for:</strong></p>
-                            <ul>
-                                <li>Straightforward cases with permanent physical impairments</li>
-                                <li>Obvious and well-documented limitations</li>
-                                <li>Clear-cut disabilities</li>
-                            </ul>
-                            <p><strong>Pros:</strong></p>
-                            <ul>
-                                <li>Free</li>
-                                <li>Full control of the process</li>
-                            </ul>
-                            <p><strong>Cons:</strong></p>
-                            <ul>
-                                <li>Many applications are denied due to incorrect completion, not lack of eligibility</li>
-                                <li>Doctors often focus on diagnoses instead of functional limitations</li>
-                                <li>Missing key wording or improper framing can lead to rejection of valid applications</li>
-                            </ul>
-
-                            <h4>When to Seek Professional Assistance</h4>
-                            <p>Strongly consider assistance if you have:</p>
-                            <ul>
-                                <li>Complex, fluctuating, or poorly understood conditions</li>
-                                <li>Mental health conditions, chronic pain, neurological conditions, autoimmune disorders, or multiple diagnoses</li>
-                                <li>Conditions requiring application under "cumulative effect of significant limitations"</li>
-                                <li>Non-obvious impairments that impact daily life in subtle but serious ways</li>
-                            </ul>
-                            <p><strong>Benefits of assistance:</strong></p>
-                            <ul>
-                                <li>Expert understanding of CRA language and requirements</li>
-                                <li>Guidance for both you and your medical professional</li>
-                                <li>Proper framing of functional limitations</li>
-                                <li>Significantly increased approval chances</li>
-                                <li>Reduced stress and time</li>
-                                <li>Help ensuring past years are claimed correctly</li>
-                            </ul>
-                            <p><strong>Cost consideration:</strong></p>
-                            <ul>
-                                <li>The recommended service charges a percentage of your potential refund from retroactive years (and only if you successfully qualify — no refund, no fees)</li>
-                                <li>Fees are fully disclosed upfront</li>
-                                <li>You only pay from funds you wouldn't have received otherwise</li>
-                            </ul>
-                            <p>Due to the importance of qualifying for the DTC, receiving assistance is typically recommended.</p>
-
-                            <hr class="content-divider">
-                            <div class="eligibility-checklist">
-                                <label><input type="checkbox" data-group="dtc-main" value="with" onchange="handleDTCApplyCheckbox(this, 'dtc-continue-main')"> Apply with assistance</label>
-                                <label><input type="checkbox" data-group="dtc-main" value="without" onchange="handleDTCApplyCheckbox(this, 'dtc-continue-main')"> Apply without assistance</label>
-                            </div>
-                            <div id="dtc-continue-main" class="gap-continue-section">
-                                <hr class="content-divider">
-                                <a href="#" target="_blank" class="gap-continue-btn">Continue</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 1.3 Guaranteed Access Program -->
-        <div class="benefit-item">
-            <div class="benefit-trigger" onclick="toggleBenefit('gap-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">3.3.3</span>&nbsp;<span class="benefit-title">Guaranteed Access Program (GAP)</span>
-            </div>
-            <div class="benefit-content" id="gap-content">
-                <div class="benefit-content-inner">
-
-                    <p>The Guaranteed Access Program (GAP) is a Final Expense life insurance product designed to provide a one-time, tax-free payout (minimum $10,000) to a person's loved ones at the time of their passing. This program is offered through Canadian insurers and guarantees coverage for people with disabilities and long term medical conditions who might otherwise have difficulty obtaining traditional life insurance, helping to ensure funeral and final expenses don't become a financial burden on their families during an already difficult time.</p>
-
-                    <h4>Key Features</h4>
-                    <ul>
-                        <li><strong>Guaranteed Approval:</strong> No medical underwriting required; approval is guaranteed for applicants under age 80 who meet eligibility criteria</li>
-                        <li><strong>Designed Affordability:</strong> Financially accessible to all income levels, with costs typically ranging from only $1.00 to $1.50 per day</li>
-                        <li><strong>Guaranteed Benefit Amount:</strong> The payout to your beneficiary is guaranteed to never decrease</li>
-                        <li><strong>Level Premiums:</strong> Monthly costs are guaranteed to never increase</li>
-                        <li><strong>Maturity Benefit:</strong> If you outlive the policy term, the benefit amount is paid directly to you to use as you wish</li>
-                        <li><strong>Guaranteed Payout:</strong> Funds are guaranteed to be paid out—either to your beneficiary upon death or directly to you if you outlive the term</li>
-                    </ul>
-
-                    <h4>Benefit Amounts</h4>
-                    <ul>
-                        <li><strong>Minimum Coverage:</strong> Minimum $10,000 lump sum payment to the person of your choosing (amounts are typically higher)</li>
-                        <li><strong>Coverage Determination:</strong> Requires a person to complete an online questionnaire</li>
-                        <li><strong>Payment Type:</strong> One-time, tax-free lump sum payment to your designated beneficiary upon death</li>
-                    </ul>
-
-                    <h4>Medical Exclusions</h4>
-                    <p>There are no medical exclusions.</p>
-
-                    <div class="more-info-row">
-                        <label>
-                            <input type="checkbox" id="checkbox-gap" onchange="toggleApplySection('gap-apply-section', this.checked)">
-                            Provide more information
-                        </label>
-                    </div>
-
-                    <div class="apply-section" id="gap-apply-section">
-                        <hr class="content-divider">
-                        <p><strong>Please confirm the following:</strong></p>
-                        <div class="eligibility-checklist">
-                            <label><input type="checkbox" class="elig-gap" onchange="checkAllEligibility('elig-gap', 'gap-apply-methods')"> I am under the age of 80 years old</label>
-                            <label><input type="checkbox" class="elig-gap" onchange="checkAllEligibility('elig-gap', 'gap-apply-methods')"> I have a prolonged medical condition or conditions</label>
-                            <label><input type="checkbox" class="elig-gap" onchange="checkAllEligibility('elig-gap', 'gap-apply-methods')"> I am in need of insurance to cover my final expenses</label>
-                        </div>
-
-                        <div class="apply-methods" id="gap-apply-methods">
-                            <hr class="content-divider">
-
-                            <h4>Application Process</h4>
-
-                            <h4>Option A — Determine Your Benefit Amount</h4>
-                            <p style="font-weight: 500;">Best for individuals who feel ready to move forward.</p>
-                            <ul>
-                                <li>Begin the process to determine the tax-free Benefit Amount your loved ones may receive</li>
-                                <li>If you outlive the program term, the full Benefit Amount is paid directly to you</li>
-                                <li>Complete a short 2-minute questionnaire to start your eligibility review</li>
-                                <li>Review your results together with a Benefits Specialist (Zoom) to ensure you fully understand the program and can ask questions</li>
-                                <li>Receive step-by-step guidance and support with the enrolment process</li>
-                                <li>Your specialist will also review other benefit programs you may qualify for</li>
-                            </ul>
-
-                            <h4>Option B — Learn More About the Program</h4>
-                            <p style="font-weight: 500;">Best for individuals who would like a clear understanding before starting the questionnaire.</p>
-                            <ul>
-                                <li>Receive a clear, detailed explanation of how the program works</li>
-                                <li>Watch a short educational video that explains the program in simple terms</li>
-                                <li>Meet with a Benefits Specialist (Zoom) before completing the questionnaire to ask questions and walk through the program together</li>
-                                <li>Move forward only when you feel fully informed and comfortable</li>
-                                <li>Your specialist will also review other benefit programs you may qualify for</li>
-                            </ul>
-
-                            <hr class="content-divider">
-                            <div class="eligibility-checklist">
-                                <label><input type="checkbox" data-group="gap-main" value="a" onchange="handleGapCheckbox(this, 'gap-continue-main')"> <strong>Option&nbsp;A:&nbsp;</strong>Determine Your Benefit Amount</label>
-                                <label><input type="checkbox" data-group="gap-main" value="b" onchange="handleGapCheckbox(this, 'gap-continue-main')"> <strong>Option&nbsp;B:&nbsp;</strong>Learn More About The Program</label>
-                            </div>
-                            <div id="gap-continue-main" class="gap-continue-section">
-                                <hr class="content-divider">
-                                <a href="#" target="_blank" class="gap-continue-btn">Continue</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 1.4 Canadian Dental Care Plan -->
-        <div class="benefit-item">
-            <div class="benefit-trigger" onclick="toggleBenefit('cdcp-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">3.3.4</span>&nbsp;<span class="benefit-title">Canadian Dental Care Plan (CDCP)</span>
-            </div>
-            <div class="benefit-content" id="cdcp-content">
-                <div class="benefit-content-inner">
-
-                    <p>The Canadian Dental Care Plan is helping make the cost of dental care more affordable for eligible Canadian residents. The CDCP is managed by Health Canada and administered by Sun Life. This federal program provides coverage for dental services for Canadians who do not have access to private dental insurance.</p>
-                    <p><strong>Important:</strong> The CDCP does not provide free dental care. It covers a part of the cost of your care. You may have to pay the portion of costs that are not covered.</p>
-
-                    <h4>Coverage Amount</h4>
-                    <p>Income-Based Co-Payments:</p>
-                    <ul>
-                        <li><strong>Income under $70,000:</strong> 100% coverage (no co-payment)</li>
-                        <li><strong>Income $70,000–$79,999:</strong> 60% coverage (40% co-payment)</li>
-                        <li><strong>Income $80,000–$89,999:</strong> 40% coverage (60% co-payment)</li>
-                    </ul>
-                    <p><strong>Note:</strong> Additional costs may apply if your dental services exceed CDCP reimbursement rates or include non-covered services.</p>
-
-                    <h4>Services Covered</h4>
-                    <p>The CDCP will help pay a portion of the cost for a wide range of oral health care services:</p>
-                    <ul>
-                        <li><strong>Preventive:</strong> Exams, cleanings, polishing, fluoride treatments, X-rays</li>
-                        <li><strong>Basic:</strong> Fillings, simple extractions</li>
-                        <li><strong>Major:</strong> Root canals, crowns, oral surgeries</li>
-                        <li><strong>Periodontal:</strong> Deep cleanings, scaling and root planing</li>
-                        <li><strong>Prosthodontic:</strong> Complete and partial dentures, denture repairs</li>
-                    </ul>
-                    <p><strong>Note:</strong> Some services require preauthorization before treatment.</p>
-
-                    <h4>Eligibility Requirements</h4>
-                    <p>You must meet all of the following criteria:</p>
-                    <ul>
-                        <li><strong>No Private Dental Insurance:</strong> No coverage through employer, family member's employer, pension benefits, or private plans</li>
-                        <li><strong>Income:</strong> Adjusted family net income less than $90,000</li>
-                        <li><strong>Tax Filing:</strong> You and your spouse/common-law partner (if applicable) must have filed Canadian tax returns for the previous year</li>
-                        <li><strong>Residency:</strong> Canadian resident for tax purposes</li>
-                    </ul>
-                    <p><strong>Exception:</strong> If you have dental coverage through a provincial, territorial, or federal government social program, you can still qualify. Coverage will be coordinated between the plans.</p>
-
-                    <h4>When to Apply</h4>
-                    <p>All eligible Canadians can now apply for the Canadian Dental Care Plan. Apply before you need dental care, as coverage only begins on your official start date. You will need to renew your coverage every year to confirm you still meet the eligibility requirements.</p>
-
-                    <div class="more-info-row">
-                        <label>
-                            <input type="checkbox" id="checkbox-cdcp" onchange="toggleApplySection('cdcp-apply-section', this.checked)">
-                            Apply Now
-                        </label>
-                    </div>
-
-                    <div class="apply-section" id="cdcp-apply-section">
-                        <hr class="content-divider">
-                        <div class="eligibility-checklist">
-                            <label><input type="checkbox" class="elig-cdcp" onchange="checkAllEligibility('elig-cdcp', 'cdcp-apply-methods')"> I confirm that my 2024 income was under $90,000</label>
-                        </div>
-
-                        <div class="apply-methods" id="cdcp-apply-methods">
-                            <hr class="content-divider">
-
-                            <h4>Application Methods</h4>
-                            <p>You can apply online, by phone, or by mail:</p>
-                            <ul>
-                                <li><strong>Online (Recommended):</strong> Apply through your My Service Canada Account (MSCA)</li>
-                                <li><strong>By Phone:</strong> Call Service Canada at 1-833-537-4342 (TTY: 1-833-677-6262)</li>
-                                <li><strong>By Mail:</strong> Download and mail the application form to the address provided with the form</li>
-                            </ul>
-
-                            <h4>What You'll Need to Apply</h4>
-                            <p>Gather the following information for yourself and your spouse or common-law partner (if applicable):</p>
-                            <ul>
-                                <li>Social Insurance Number (SIN)</li>
-                                <li>Date of birth</li>
-                                <li>Mailing address</li>
-                                <li>Confirmation that you and your spouse/common-law partner (if applicable) have filed your tax returns for the previous year</li>
-                            </ul>
-
-                            <h4>Processing Time</h4>
-                            <p>Once your application is processed, you will receive a welcome package by mail from Sun Life with:</p>
-                            <ul>
-                                <li>Your CDCP member card</li>
-                                <li>Your coverage start date</li>
-                                <li>Co-payment information</li>
-                            </ul>
-                            <p><strong>Note:</strong> Welcome packages may take up to three months to arrive from the time you apply. You cannot receive dental care under the program until you have received your CDCP card and your coverage start date has begun.</p>
-
-                            <h4>Annual Renewal</h4>
-                            <p>You will need to renew your coverage every year to confirm you still meet the eligibility requirements.</p>
-
-                            <h4>Apply Online</h4>
-                            <p>To apply online, visit: <a href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan/apply.html" target="_blank">Canadian Dental Care Plan | Apply Online</a></p>
-
-                            <h4>Further Assistance</h4>
-                            <p>Service Canada CDCP Call Center:</p>
-                            <ul>
-                                <li><strong>Phone:</strong> 1-833-537-4342</li>
-                                <li><strong>TTY:</strong> 1-833-677-6262</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 1.5 Canada Pension Plan Disability -->
-        <div class="benefit-item">
-            <div class="benefit-trigger" onclick="toggleBenefit('cppd-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">3.3.5</span>&nbsp;<span class="benefit-title">Canada Pension Plan Disability (CPP-D)</span>
-            </div>
-            <div class="benefit-content" id="cppd-content">
-                <div class="benefit-content-inner">
-
-                    <p>Canada Pension Plan disability benefits are designed to provide partial income replacement to eligible Canada Pension Plan contributors who are under the age of 65 and have a severe and prolonged disability. This is a taxable monthly payment for individuals who have contributed to the CPP during their working years and can no longer work due to their disability.</p>
-                    <p><strong>Important:</strong> Benefits start 4 months after you are deemed disabled. You may receive up to a maximum of 12 months of retroactive payments from the date Service Canada received your application.</p>
-
-                    <h4>Benefit Amount</h4>
-                    <p>Disability Pension (2026):</p>
-                    <ul>
-                        <li><strong>Maximum:</strong> $1,741.20 per month</li>
-                        <li><strong>Average:</strong> $1,191.72 per month</li>
-                    </ul>
-                    <p><strong>Children's Benefit:</strong> Children of CPP disability beneficiaries are also eligible for a monthly benefit up to age 18, or up to age 25 if they are attending school part-time or full-time.</p>
-                    <p><strong>Benefit Ends:</strong> At age 65, your CPP disability benefit automatically converts to a CPP retirement pension.</p>
-
-                    <h4>Eligibility Requirements</h4>
-                    <p>You must meet all of the following criteria:</p>
-                    <ul>
-                        <li><strong>Age:</strong> Between 18 and 64 years old</li>
-                        <li><strong>CPP Contributions:</strong> You contributed enough years to the CPP before you first became severely disabled and have been continuously disabled since that time</li>
-                        <li><strong>Severe Disability:</strong> Your condition prevents you from working at any job regularly (not just your previous job). A substantially gainful occupation is a job that pays wages equal to or greater than the maximum annual amount a person could receive as a disability pension. In 2026, this amount is $20,971.45 (before tax)</li>
-                        <li><strong>Prolonged Disability:</strong> Your disability is long-term and of indefinite duration, or is likely to result in death</li>
-                        <li><strong>Work Earnings:</strong> If you earn less than $7,400 (before tax), this should not affect your disability benefits. If you earn between $7,400 and $20,971.45 (before tax), this may demonstrate that you are regularly capable of working and it may affect your disability benefits</li>
-                    </ul>
-
-                    <h4>When to Apply</h4>
-                    <p>Apply as soon as you develop a severe and prolonged disability that prevents you from working regularly at any job. You may still qualify for CPP disability benefits even if you stopped working a while ago or didn't apply right away.</p>
-                    <p><strong>Processing Time:</strong> It can take up to 120 days (4 months) for Service Canada to make a decision on your application.</p>
-                    <p><strong>Note:</strong> If you live in Quebec, apply to the Quebec Pension Plan (QPP) instead.</p>
-
-                    <div class="more-info-row">
-                        <label>
-                            <input type="checkbox" id="checkbox-cppd" onchange="toggleApplySection('cppd-apply-section', this.checked)">
-                            Provide more information
-                        </label>
-                    </div>
-
-                    <div class="apply-section" id="cppd-apply-section">
-                        <hr class="content-divider">
-
-                        <h4>Application Process (2 Steps)</h4>
-                        <p><strong>Step 1: Complete Your Application Form</strong></p>
-                        <p>You can apply online or by paper form:</p>
-                        <ul>
-                            <li><strong>Online (Recommended):</strong> Sign in to your My Service Canada Account (MSCA) and select "Apply for Canada Pension Plan disability benefits" from the Canada Pension Plan section</li>
-                            <li><strong>By Paper Form:</strong> Download and complete the appropriate form:
-                                <ul>
-                                    <li><strong>Standard Application:</strong> Application for Canada Pension Plan Disability Benefits (ISP-1151)</li>
-                                    <li><strong>Terminal Illness Application:</strong> Terminal Illness Application for Disability Benefits (ISP-2530A)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p><strong>Step 2: Submit Your Medical Form</strong></p>
-                        <p>After submitting your application, you must have a medical form completed:</p>
-                        <ul>
-                            <li>If you are currently receiving disability benefits from an insurance company or provincial/territorial agency, ask them to mail your most recent medical report(s) to Service Canada</li>
-                            <li>If not, work with your doctor or nurse practitioner to complete the required medical form</li>
-                        </ul>
-                        <p><strong>Note:</strong> Service Canada will pay up to $85 to your healthcare professional for completing the medical form. If they charge more than $85, you will need to pay the difference.</p>
-
-                        <h4>What You'll Need</h4>
-                        <ul>
-                            <li>Social Insurance Number (SIN)</li>
-                            <li>Employment history and CPP contribution information</li>
-                            <li>Medical information about your disability</li>
-                            <li>Banking information for direct deposit (recommended)</li>
-                        </ul>
-                        <p>Keep photocopies of everything you submit.</p>
-
-                        <h4>Processing Time</h4>
-                        <ul>
-                            <li><strong>Standard Applications:</strong> Up to 120 calendar days (4 months)</li>
-                            <li><strong>Grave Conditions:</strong> Up to 30 calendar days</li>
-                            <li><strong>Terminal Illness:</strong> Up to 5 business days</li>
-                        </ul>
-                        <p><strong>Important:</strong> The date Service Canada receives your application could affect when your benefit starts. Apply as soon as you develop a severe and prolonged disability that prevents you from working.</p>
-
-                        <h4>Apply Online</h4>
-                        <p>To apply online, sign in to: <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" target="_blank">My Service Canada Account</a></p>
-                        <p>Or download paper forms at: <a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit/apply.html" target="_blank">CPP Disability Benefits | Apply</a></p>
-
-                        <h4>Further Assistance</h4>
-                        <p>Service Canada CPP Call Center:</p>
-                        <ul>
-                            <li><strong>Phone:</strong> 1-800-277-9914</li>
-                            <li><strong>TTY:</strong> 1-800-255-4786</li>
-                            <li><strong>Outside Canada/US:</strong> 1-613-957-1954 (collect calls accepted)</li>
-                        </ul>
-                        <p>You can also visit any Service Canada office for in-person assistance.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 1.6 Registered Disability Savings Plan -->
-        <div class="benefit-item">
-            <div class="benefit-trigger" onclick="toggleBenefit('rdsp-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">3.3.6</span>&nbsp;<span class="benefit-title">Registered Disability Savings Plan (RDSP)</span>
-            </div>
-            <div class="benefit-content" id="rdsp-content">
-                <div class="benefit-content-inner">
-
-                    <p>The Registered Disability Savings Plan is a long-term savings plan to help people with disabilities who are approved for the Disability Tax Credit save for the future. When you open a plan, you may also get grants and bonds from the Government of Canada to help with your long-term savings. Investment income and capital gains grow tax-deferred within the plan.</p>
-
-                    <h4>Benefit Amount</h4>
-
-                    <p><strong>Canada Disability Savings Grant (CDSG):</strong></p>
-                    <ul>
-                        <li><strong>Matching Ratio:</strong> The government will pay a matching grant of up to 300%, depending on the beneficiary's adjusted family net income and the amount contributed</li>
-                        <li><strong>Maximum Annual Grant:</strong> Up to $10,500 per year</li>
-                        <li><strong>Lifetime Maximum:</strong> $70,000</li>
-                        <li><strong>Availability:</strong> Until December 31 of the year you turn 49</li>
-                    </ul>
-
-                    <p><strong>Canada Disability Savings Bond (CDSB):</strong></p>
-                    <ul>
-                        <li><strong>No Contributions Required:</strong> You do not need to make any contributions to your plan to receive the bond (if eligible)</li>
-                        <li><strong>Annual Maximum:</strong> Up to $1,000 per year</li>
-                        <li><strong>Retroactive Maximum:</strong> Up to $10,000</li>
-                        <li><strong>Lifetime Maximum:</strong> $20,000</li>
-                        <li><strong>Availability:</strong> Until December 31 of the year you turn 49</li>
-                    </ul>
-
-                    <p><strong>Personal Contributions:</strong></p>
-                    <ul>
-                        <li>No annual limit</li>
-                        <li>Lifetime contribution limit: $200,000</li>
-                        <li>Contributions can be made until December 31 of the year you turn 59 (bond and grant are not paid past age 49)</li>
-                    </ul>
-
-                    <h4>Eligibility Requirements</h4>
-                    <p>To open an RDSP, you must meet all of the following criteria:</p>
-                    <ul>
-                        <li><strong>Disability Tax Credit:</strong> Must be approved for the DTC</li>
-                        <li><strong>Residency:</strong> Must be a Canadian resident when the plan is set up and when each contribution is made</li>
-                        <li><strong>Age:</strong> Must be under age 60 when the plan is opened (bond and grant are not paid past the age of 49)</li>
-                        <li><strong>Social Insurance Number:</strong> Must have a valid SIN</li>
-                    </ul>
-
-                    <h4>When to Apply</h4>
-                    <p>Open an RDSP as early as possible to maximize grants and bonds. A beneficiary's RDSP can receive a grant on contributions made until December 31 of the year in which the beneficiary turns 49. The plan can be opened until December 31 of the year you turn 59.</p>
-                    <p><strong>Important:</strong> To qualify for the bond or to earn a grant, the beneficiary must file income tax and benefit returns for the past two years and all future taxation years when they have an RDSP.</p>
-
-                    <div class="more-info-row">
-                        <label>
-                            <input type="checkbox" id="checkbox-rdsp" onchange="toggleApplySection('rdsp-apply-section', this.checked)">
-                            Provide more information
-                        </label>
-                    </div>
-
-                    <div class="apply-section" id="rdsp-apply-section">
-                        <hr class="content-divider">
-
-                        <h4>Prerequisites</h4>
-                        <p>Before opening an RDSP, you must:</p>
-                        <ul>
-                            <li>Be approved for the Disability Tax Credit (DTC)</li>
-                            <li>Have a Social Insurance Number (SIN)</li>
-                            <li>Be under age 60 when the plan is opened</li>
-                            <li>Be a Canadian resident</li>
-                        </ul>
-
-                        <h4>How to Open an RDSP</h4>
-                        <p><strong>Step 1: Choose a Financial Institution</strong></p>
-                        <p>Contact a participating bank, credit union, or investment firm that offers RDSPs. Compare fees, investment options, and withdrawal rules.</p>
-                        <p><strong>Step 2: Open the Account</strong></p>
-                        <p>Visit your chosen institution with:</p>
-                        <ul>
-                            <li>Social Insurance Number (SIN)</li>
-                            <li>Valid photo ID</li>
-                            <li>Proof of DTC approval</li>
-                            <li>Proof of legal authority (if applying on behalf of someone else)</li>
-                        </ul>
-                        <p><strong>Who Can Open an RDSP:</strong></p>
-                        <ul>
-                            <li>The beneficiary (if of legal age and has capacity)</li>
-                            <li>Legal parent (for child under age of majority)</li>
-                            <li>Legal guardian or representative</li>
-                            <li>Qualifying family member (in some cases)</li>
-                        </ul>
-                        <p><strong>Step 3: Apply for Grants and Bonds</strong></p>
-                        <p>When opening the RDSP, apply for government grants and bonds through your financial institution.</p>
-
-                        <h4>Important Notes</h4>
-                        <ul>
-                            <li><strong>Lifetime Contribution Limit:</strong> $200,000 (no annual limit)</li>
-                            <li><strong>Contributions Allowed Until:</strong> December 31 of the year you turn 59</li>
-                            <li><strong>Tax Filing Required:</strong> Must file tax returns for past two years and all future years to receive grants and bonds</li>
-                            <li><strong>Carry-Forward Available:</strong> Can apply for up to 10 years of retroactive grants and bonds</li>
-                        </ul>
-
-                        <h4>Find a Financial Institution</h4>
-                        <p>For a list of participating institutions, visit: <a href="https://www.canada.ca/en/employment-social-development/programs/disability/savings/apply.html#_Open_a_plan" target="_blank">canada.ca/rdsp</a></p>
-
-                        <h4>Further Assistance</h4>
-                        <p>Employment and Social Development Canada (ESDC) | Canada Disability Savings Grant &amp; Bond:</p>
-                        <ul>
-                            <li><strong>Phone:</strong> 1-866-204-0357</li>
-                            <li><strong>Email:</strong> rdsp-reei@hrsdc-rhdcc.gc.ca</li>
-                        </ul>
-                        <p>This number is specifically for questions about the Canada Disability Savings Grant (CDSG) and Canada Disability Savings Bond (CDSB).</p>
-                        <p>General RDSP Inquiries:</p>
-                        <ul>
-                            <li><strong>Phone:</strong> 1-800-622-6232 (1-800-O-CANADA)</li>
-                            <li><strong>TTY:</strong> 1-800-926-9105</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Next Steps: appears after all Benefits, only when a checkbox is checked -->
-    <section class="next-steps-section" id="next-steps-section">
-        <hr class="section-divider" style="margin-top: 0;">
-        <h2 class="indented-title">Next Steps</h2>
-
-        <!-- 2.1 Canada Disability Benefit -->
-        <div class="next-step-item" id="next-step-cdb">
-            <div class="next-step-trigger" onclick="toggleBenefit('next-step-cdb-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">2.1</span>&nbsp;<span class="benefit-title">Canada Disability Benefit (CDB)</span>
-            </div>
-            <div class="next-step-content" id="next-step-cdb-content">
-                <div class="next-step-content-inner">
-
-                    <h4>Description</h4>
-                    <p>Up to $200/month in support payments.</p>
-
-                    <h4>Application Methods</h4>
-                    <p>You can apply online through the Service Canada portal, by mail, or in person:</p>
-                    <ul>
-                        <li><strong>Online (Recommended):</strong> Apply through the Service Canada online portal</li>
-                        <li><strong>By Mail or In Person:</strong> Complete a printable application form and mail it to Service Canada Centre, CDB Processing Centre, P.O. Box 60, Boucherville, QC J4B 5E6, or drop it off at your nearest Service Canada office</li>
-                    </ul>
-
-                    <h4>Letter From Service Canada</h4>
-                    <ul>
-                        <li><strong>If You Have Received a Letter:</strong> The government is sending letters in June 2025 to people already approved for the Disability Tax Credit who meet most eligibility criteria. The letter includes a unique application code.</li>
-                        <li><strong>If You Didn't Receive a Letter:</strong> You can still apply—just complete the full application form without the code.</li>
-                    </ul>
-
-                    <h4>Processing Time</h4>
-                    <p>It may take up to 28 calendar days for Service Canada to process your application, or up to 49 days if you are applying on behalf of someone else as their legal representative.</p>
-
-                    <h4>Apply Online</h4>
-                    <p>To apply online, click: <a href="https://www.canada.ca/en/services/benefits/disability/canada-disability-benefit/apply.html" target="_blank">Canada Disability Benefit | Apply Online</a></p>
-
-                    <h4>Further Assistance</h4>
-                    <p>Service Canada CDB Call Center:</p>
-                    <ul>
-                        <li><strong>Phone:</strong> 1-833-486-3007</li>
-                        <li><strong>TTY:</strong> 1-833-467-2700</li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 2.2 Disability Tax Credit -->
-        <div class="next-step-item" id="next-step-dtc">
-            <div class="next-step-trigger" onclick="toggleBenefit('next-step-dtc-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">2.2</span>&nbsp;<span class="benefit-title">Disability Tax Credit (DTC)</span>
-            </div>
-            <div class="next-step-content" id="next-step-dtc-content">
-                <div class="next-step-content-inner">
-
-                    <h4>Application Process</h4>
-                    <p>To apply for the DTC, you must complete Form T2201 (Disability Tax Credit Certificate), which has two parts:</p>
-                    <ul>
-                        <li><strong>Part A:</strong> Completed by you (the applicant)</li>
-                        <li><strong>Part B:</strong> Completed and certified by a qualified medical practitioner (doctor, nurse practitioner, or specialist)</li>
-                    </ul>
-                    <p>The CRA evaluates your application based on functional limitations (how your condition affects daily activities), not the diagnosis itself.</p>
-
-                    <h4>When to Apply on Your Own</h4>
-                    <p><strong>Best for:</strong></p>
-                    <ul>
-                        <li>Straightforward cases with permanent physical impairments</li>
-                        <li>Obvious and well-documented limitations</li>
-                        <li>Clear-cut disabilities</li>
-                    </ul>
-                    <p><strong>Pros:</strong></p>
-                    <ul>
-                        <li>Free</li>
-                        <li>Full control of the process</li>
-                    </ul>
-                    <p><strong>Cons:</strong></p>
-                    <ul>
-                        <li>Many applications are denied due to incorrect completion, not lack of eligibility</li>
-                        <li>Doctors often focus on diagnoses instead of functional limitations</li>
-                        <li>Missing key wording or improper framing can lead to rejection of valid applications</li>
-                    </ul>
-
-                    <h4>When to Seek Professional Assistance</h4>
-                    <p>Strongly consider assistance if you have:</p>
-                    <ul>
-                        <li>Complex, fluctuating, or poorly understood conditions</li>
-                        <li>Mental health conditions, chronic pain, neurological conditions, autoimmune disorders, or multiple diagnoses</li>
-                        <li>Conditions requiring application under "cumulative effect of significant limitations"</li>
-                        <li>Non-obvious impairments that impact daily life in subtle but serious ways</li>
-                    </ul>
-                    <p><strong>Benefits of assistance:</strong></p>
-                    <ul>
-                        <li>Expert understanding of CRA language and requirements</li>
-                        <li>Guidance for both you and your medical professional</li>
-                        <li>Proper framing of functional limitations</li>
-                        <li>Significantly increased approval chances</li>
-                        <li>Reduced stress and time</li>
-                        <li>Help ensuring past years are claimed correctly</li>
-                    </ul>
-                    <p><strong>Cost consideration:</strong></p>
-                    <ul>
-                        <li>The recommended service charges a percentage of your potential refund from retroactive years (and only if you successfully qualify — no refund, no fees)</li>
-                        <li>Fees are fully disclosed upfront</li>
-                        <li>You only pay from funds you wouldn't have received otherwise</li>
-                    </ul>
-                    <p>Due to the importance of qualifying for the DTC, receiving assistance is typically recommended.</p>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 2.3 Guaranteed Access Program -->
-        <!-- 2.3 Guaranteed Access Program -->
-        <div class="next-step-item" id="next-step-gap">
-            <div class="next-step-trigger" onclick="toggleBenefit('next-step-gap-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">2.3</span>&nbsp;<span
-                    class="benefit-title">Guaranteed Access Program (GAP)</span>
-            </div>
-            <div class="next-step-content" id="next-step-gap-content">
-                <div class="next-step-content-inner">
-        
-                    <h4>Description</h4>
-                    <p>Final expense life insurance providing a one-time, tax-free payout (minimum $10,000) to your beneficiary,
-                        or directly to you if you outlive the term.</p><br><br>
-        
-                    <span class="benefit-title">Application Process</span>
-        
-                    <h4>Option A — Determine Your Benefit Amount</h4>
-                    <p style="font-weight: 500;">Best for individuals who feel ready to move forward.</p>
-                    <ul>
-                        <li>Begin the process to determine the tax-free Benefit Amount your loved ones may receive</li>
-                        <li>If you outlive the program term, the full Benefit Amount is paid directly to you</li>
-                        <li>Complete a short 2-minute questionnaire to start your eligibility review</li>
-                        <li>Review your results together with a Benefits Specialist (Zoom) to ensure you fully understand the program and
-                            can ask questions</li>
-                        <li>Receive step-by-step guidance and support with the enrolment process</li>
-                        <li>Your specialist will also review other benefit programs you may qualify for</li>
-                    </ul>
-                    
-                    <h4>Option B — Learn More About the Program (Recommended)</h4>
-                    <p style="font-weight: 500;">Best for individuals who would like a clear understanding before starting the
-                        questionnaire.</p>
-                    <ul>
-                        <li>Receive a clear, detailed explanation of how the program works</li>
-                        <li>Watch a short educational video that explains the program in simple terms</li>
-                        <li>Meet with a Benefits Specialist (Zoom) before completing the questionnaire to ask questions and walk through the
-                            program together</li>
-                        <li>Move forward only when you feel fully informed and comfortable</li>
-                        <li>Your specialist will also review other benefit programs you may qualify for</li>
-                    </ul>
-        <div class="more-info-row">
-            <p style="margin-bottom: 10px;">Please select your preferred option:</p>
-            <label>
-                <input type="checkbox" data-group="gap-next" value="a" onchange="handleGapCheckbox(this, 'gap-continue-next')">
-                Option&nbsp;A: Determine Your Benefit Amount
-            </label>
-            <label style="display: block; margin-top: 8px;">
-                <input type="checkbox" data-group="gap-next" value="b" onchange="handleGapCheckbox(this, 'gap-continue-next')">
-                Option&nbsp;B: Learn More About The Program
-            </label>
-            <div id="gap-continue-next" class="gap-continue-section">
-                <hr class="content-divider">
-                <a href="#" target="_blank" class="gap-continue-btn">Continue</a>
-            </div>
-        </div>
-        
-        </div>
-        </div>
-        </div>
-
-
-        <!-- 2.4 Canadian Dental Care Plan -->
-        <div class="next-step-item" id="next-step-cdcp">
-            <div class="next-step-trigger" onclick="toggleBenefit('next-step-cdcp-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">2.4</span>&nbsp;<span class="benefit-title">Canadian Dental Care Plan (CDCP)</span>
-            </div>
-            <div class="next-step-content" id="next-step-cdcp-content">
-                <div class="next-step-content-inner">
-
-                    <h4>Description</h4>
-                    <p>Coverage for a wide range of dental services with income-based co-payments. All eligible Canadians can now apply.</p>
-
-                    <h4>Application Methods</h4>
-                    <p>You can apply online, by phone, or by mail:</p>
-                    <ul>
-                        <li><strong>Online (Recommended):</strong> Apply through your My Service Canada Account (MSCA)</li>
-                        <li><strong>By Phone:</strong> Call Service Canada at 1-833-537-4342 (TTY: 1-833-677-6262)</li>
-                        <li><strong>By Mail:</strong> Download and mail the application form to the address provided with the form</li>
-                    </ul>
-
-                    <h4>What You'll Need to Apply</h4>
-                    <p>Gather the following information for yourself and your spouse or common-law partner (if applicable):</p>
-                    <ul>
-                        <li>Social Insurance Number (SIN)</li>
-                        <li>Date of birth</li>
-                        <li>Mailing address</li>
-                        <li>Confirmation that you and your spouse/common-law partner (if applicable) have filed your tax returns for the previous year</li>
-                    </ul>
-
-                    <h4>Processing Time</h4>
-                    <p>Once your application is processed, you will receive a welcome package by mail from Sun Life with:</p>
-                    <ul>
-                        <li>Your CDCP member card</li>
-                        <li>Your coverage start date</li>
-                        <li>Co-payment information</li>
-                    </ul>
-                    <p><strong>Note:</strong> Welcome packages may take up to three months to arrive from the time you apply. You cannot receive dental care under the program until you have received your CDCP card and your coverage start date has begun.</p>
-
-                    <h4>Annual Renewal</h4>
-                    <p>You will need to renew your coverage every year to confirm you still meet the eligibility requirements.</p>
-
-                    <h4>Apply Online</h4>
-                    <p>To apply online, visit: <a href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan/apply.html" target="_blank">Canadian Dental Care Plan | Apply Online</a></p>
-
-                    <h4>Further Assistance</h4>
-                    <p>Service Canada CDCP Call Center:</p>
-                    <ul>
-                        <li><strong>Phone:</strong> 1-833-537-4342</li>
-                        <li><strong>TTY:</strong> 1-833-677-6262</li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- 2.5 Canada Pension Plan Disability -->
-        <div class="next-step-item" id="next-step-cppd">
-            <div class="next-step-trigger" onclick="toggleBenefit('next-step-cppd-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">2.5</span>&nbsp;<span class="benefit-title">Canada Pension Plan Disability (CPP-D)</span>
-            </div>
-            <div class="next-step-content" id="next-step-cppd-content">
-                <div class="next-step-content-inner">
-
-                    <h4>Description</h4>
-                    <p>Monthly taxable payment to replace income for Canadians who have contributed to CPP and can no longer work due to a severe and prolonged disability.</p>
-
-                    <h4>Application Process (2 Steps)</h4>
-                    <p><strong>Step 1: Complete Your Application Form</strong></p>
-                    <p>You can apply online or by paper form:</p>
-                    <ul>
-                        <li><strong>Online (Recommended):</strong> Sign in to your My Service Canada Account (MSCA) and select "Apply for Canada Pension Plan disability benefits" from the Canada Pension Plan section</li>
-                        <li><strong>By Paper Form:</strong> Download and complete the appropriate form:
-                            <ul>
-                                <li><strong>Standard Application:</strong> Application for Canada Pension Plan Disability Benefits (ISP-1151)</li>
-                                <li><strong>Terminal Illness Application:</strong> Terminal Illness Application for Disability Benefits (ISP-2530A)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p><strong>Step 2: Submit Your Medical Form</strong></p>
-                    <p>After submitting your application, you must have a medical form completed:</p>
-                    <ul>
-                        <li>If you are currently receiving disability benefits from an insurance company or provincial/territorial agency, ask them to mail your most recent medical report(s) to Service Canada</li>
-                        <li>If not, work with your doctor or nurse practitioner to complete the required medical form</li>
-                    </ul>
-                    <p><strong>Note:</strong> Service Canada will pay up to $85 to your healthcare professional for completing the medical form. If they charge more than $85, you will need to pay the difference.</p>
-
-                    <h4>What You'll Need</h4>
-                    <ul>
-                        <li>Social Insurance Number (SIN)</li>
-                        <li>Employment history and CPP contribution information</li>
-                        <li>Medical information about your disability</li>
-                        <li>Banking information for direct deposit (recommended)</li>
-                    </ul>
-                    <p>Keep photocopies of everything you submit.</p>
-
-                    <h4>Processing Time</h4>
-                    <ul>
-                        <li><strong>Standard Applications:</strong> Up to 120 calendar days (4 months)</li>
-                        <li><strong>Grave Conditions:</strong> Up to 30 calendar days</li>
-                        <li><strong>Terminal Illness:</strong> Up to 5 business days</li>
-                    </ul>
-                    <p><strong>Important:</strong> The date Service Canada receives your application could affect when your benefit starts. Apply as soon as you develop a severe and prolonged disability that prevents you from working.</p>
-
-                    <h4>Apply Online</h4>
-                    <p>To apply online, sign in to: <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" target="_blank">My Service Canada Account</a></p>
-                    <p>Or download paper forms at: <a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-disability-benefit/apply.html" target="_blank">CPP Disability Benefits | Apply</a></p>
-
-                    <h4>Further Assistance</h4>
-                    <p>Service Canada CPP Call Center:</p>
-                    <ul>
-                        <li><strong>Phone:</strong> 1-800-277-9914</li>
+                        <li><strong>Link:</strong> <a href="https://www.canada.ca/en/services/benefits/publicpensions/cpp-disability-benefit.html" target="_blank">CPP Disability Benefit — Canada.ca</a></li>
+                        <li><strong>Phone (Canada/US):</strong> 1-800-277-9914</li>
                         <li><strong>TTY:</strong> 1-800-255-4786</li>
-                        <li><strong>Outside Canada/US:</strong> 1-613-957-1954 (collect calls accepted)</li>
+                        <li><strong>Email:</strong> Not publicly listed — <a href="https://www.canada.ca/en/employment-social-development/corporate/contact.html" target="_blank">use Service Canada contact options</a></li>
                     </ul>
-                    <p>You can also visit any Service Canada office for in-person assistance.</p>
+
+                    <h4>Canada Child Benefit (CCB) and Child Disability Benefit (CDB) — CRA Child and Family Benefits</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/contact-information-child-family-benefits.html" target="_blank">Child and Family Benefits Contact — Canada.ca</a></li>
+                        <li><strong>Phone:</strong> 1-800-387-1193</li>
+                        <li><strong>Email:</strong> Not publicly listed — <a href="https://www.canada.ca/en/revenue-agency/corporate/contact-information.html" target="_blank">use CRA contact options</a></li>
+                    </ul>
+
+                    <h4>Registered Disability Savings Plan (RDSP) — ESDC / O-Canada</h4>
+                    <ul>
+                        <li><strong>Link (RDSP guide PDF):</strong> <a href="https://publications.gc.ca/collections/collection_2022/edsc-esdc/Em12-1-2021-eng.pdf" target="_blank">RDSP Guide (PDF)</a></li>
+                        <li><strong>Phone (O-Canada):</strong> 1-800-622-6232</li>
+                        <li><strong>TTY:</strong> 1-800-926-9105</li>
+                        <li><strong>Email:</strong> <a href="mailto:rdsp-reei@hrsdc-rhdcc.gc.ca">rdsp-reei@hrsdc-rhdcc.gc.ca</a></li>
+                    </ul>
+
+                    <h4>Veterans Affairs Canada (VAC) — Disability Benefits</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.veterans.gc.ca/en/financial-programs-and-services/compensation-illness-or-injury/disability-benefits" target="_blank">VAC Disability Benefits</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-866-522-2122</li>
+                        <li><strong>TTY:</strong> 1-833-921-0071</li>
+                        <li><strong>Email:</strong> Not publicly listed as a direct address — <a href="https://www.veterans.gc.ca/en/contact-us" target="_blank">VAC uses account messaging and contact channels</a></li>
+                    </ul>
+
+                    <h4>Non-Insured Health Benefits (NIHB) — Indigenous Services Canada</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.sac-isc.gc.ca/eng/1579274812116/1579708265237" target="_blank">NIHB — Indigenous Services Canada</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:nihb-ssna@sac-isc.gc.ca">nihb-ssna@sac-isc.gc.ca</a></li>
+                        <li><strong>Phone:</strong> Not listed on the headquarters contact page (regional/office numbers vary)</li>
+                        <li><strong>Ontario office invoice contact:</strong> <a href="mailto:onnihbinvoices-facturesssna@sac-isc.gc.ca">onnihbinvoices-facturesssna@sac-isc.gc.ca</a></li>
+                    </ul>
 
                 </div>
             </div>
         </div>
 
-        <!-- 2.6 Registered Disability Savings Plan -->
-        <div class="next-step-item" id="next-step-rdsp">
-            <div class="next-step-trigger" onclick="toggleBenefit('next-step-rdsp-content', this)">
-                <span class="benefit-arrow">▶</span><span class="benefit-number">2.6</span>&nbsp;<span class="benefit-title">Registered Disability Savings Plan (RDSP)</span>
+        <!-- Alberta -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('alberta-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Alberta Programs</span>
             </div>
-            <div class="next-step-content" id="next-step-rdsp-content">
-                <div class="next-step-content-inner">
+            <div class="benefit-content" id="alberta-content">
+                <div class="benefit-content-inner">
 
-                    <h4>Description</h4>
-                    <p>Long-term tax-deferred savings plan with government matching grants (up to $70,000 lifetime) and bonds (up to $20,000 lifetime).</p>
-
-                    <h4>Prerequisites</h4>
-                    <p>Before opening an RDSP, you must:</p>
+                    <h4>Alberta Supports (general intake line for many programs)</h4>
                     <ul>
-                        <li>Be approved for the Disability Tax Credit (DTC)</li>
-                        <li>Have a Social Insurance Number (SIN)</li>
-                        <li>Be under age 60 when the plan is opened</li>
-                        <li>Be a Canadian resident</li>
+                        <li><strong>Link:</strong> <a href="https://www.alberta.ca/alberta-supports" target="_blank">Alberta Supports</a></li>
+                        <li><strong>Phone:</strong> 1-877-644-9992</li>
+                        <li><strong>Email:</strong> No public direct email (uses an email contact form)</li>
                     </ul>
 
-                    <h4>How to Open an RDSP</h4>
-                    <p><strong>Step 1: Choose a Financial Institution</strong></p>
-                    <p>Contact a participating bank, credit union, or investment firm that offers RDSPs. Compare fees, investment options, and withdrawal rules.</p>
-                    <p><strong>Step 2: Open the Account</strong></p>
-                    <p>Visit your chosen institution with:</p>
+                    <h4>AISH (Assured Income for the Severely Handicapped)</h4>
                     <ul>
-                        <li>Social Insurance Number (SIN)</li>
-                        <li>Valid photo ID</li>
-                        <li>Proof of DTC approval</li>
-                        <li>Proof of legal authority (if applying on behalf of someone else)</li>
-                    </ul>
-                    <p><strong>Who Can Open an RDSP:</strong></p>
-                    <ul>
-                        <li>The beneficiary (if of legal age and has capacity)</li>
-                        <li>Legal parent (for child under age of majority)</li>
-                        <li>Legal guardian or representative</li>
-                        <li>Qualifying family member (in some cases)</li>
-                    </ul>
-                    <p><strong>Step 3: Apply for Grants and Bonds</strong></p>
-                    <p>When opening the RDSP, apply for government grants and bonds through your financial institution.</p>
-
-                    <h4>Important Notes</h4>
-                    <ul>
-                        <li><strong>Lifetime Contribution Limit:</strong> $200,000 (no annual limit)</li>
-                        <li><strong>Contributions Allowed Until:</strong> December 31 of the year you turn 59</li>
-                        <li><strong>Tax Filing Required:</strong> Must file tax returns for past two years and all future years to receive grants and bonds</li>
-                        <li><strong>Carry-Forward Available:</strong> Can apply for up to 10 years of retroactive grants and bonds</li>
+                        <li><strong>Link:</strong> <a href="https://www.alberta.ca/contact-aish" target="_blank">Contact AISH — Alberta.ca</a></li>
+                        <li><strong>Phone:</strong> Varies by office (listed on the page). Example: 1-833-698-9959 and other regional lines.</li>
+                        <li><strong>Email:</strong> Varies by office (listed on the page)</li>
                     </ul>
 
-                    <h4>Find a Financial Institution</h4>
-                    <p>For a list of participating institutions, visit: <a href="https://www.canada.ca/en/employment-social-development/programs/disability/savings/apply.html#_Open_a_plan" target="_blank">canada.ca/rdsp</a></p>
-
-                    <h4>Further Assistance</h4>
-                    <p>Employment and Social Development Canada (ESDC) | Canada Disability Savings Grant &amp; Bond:</p>
+                    <h4>AADL (Alberta Aids to Daily Living)</h4>
                     <ul>
-                        <li><strong>Phone:</strong> 1-866-204-0357</li>
-                        <li><strong>Email:</strong> rdsp-reei@hrsdc-rhdcc.gc.ca</li>
+                        <li><strong>Link:</strong> <a href="https://www.alberta.ca/aadl-contact" target="_blank">AADL Contact — Alberta.ca</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:aadl.reception@gov.ab.ca">aadl.reception@gov.ab.ca</a></li>
+                        <li><strong>Phone:</strong> Not consistently shown on the contact page</li>
                     </ul>
-                    <p>This number is specifically for questions about the Canada Disability Savings Grant (CDSG) and Canada Disability Savings Bond (CDSB).</p>
-                    <p>General RDSP Inquiries:</p>
+
+                    <h4>Disability Related Employment Supports (DRES)</h4>
                     <ul>
-                        <li><strong>Phone:</strong> 1-800-622-6232 (1-800-O-CANADA)</li>
-                        <li><strong>TTY:</strong> 1-800-926-9105</li>
+                        <li><strong>Link:</strong> <a href="https://www.alberta.ca/disability-related-employment-supports" target="_blank">DRES — Alberta.ca</a></li>
+                        <li><strong>Phone (Alberta Supports line):</strong> 1-877-644-9992</li>
+                        <li><strong>Email:</strong> Not provided as a direct email (uses Alberta Supports contact channels)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- British Columbia -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('bc-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">British Columbia Programs</span>
+            </div>
+            <div class="benefit-content" id="bc-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Disability Assistance (PWD)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www2.gov.bc.ca/gov/content/family-social-supports/services-for-people-with-disabilities/disability-assistance" target="_blank">Disability Assistance — BC.gov</a></li>
+                        <li><strong>Phone (income/disability assistance access line):</strong> 1-866-866-0800</li>
+                        <li><strong>Email:</strong> Not publicly listed as a direct program email</li>
+                    </ul>
+
+                    <h4>My Self Serve (Income and Disability Assistance online)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://myselfserve.gov.bc.ca/" target="_blank">My Self Serve</a></li>
+                        <li><strong>Phone (help line):</strong> 1-866-866-0800</li>
+                        <li><strong>Email:</strong> Not listed</li>
+                    </ul>
+
+                    <h4>BC PharmaCare</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/pharmacare-for-bc-residents/contact-us" target="_blank">BC PharmaCare Contact</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-800-663-7100</li>
+                        <li><strong>Phone (Lower Mainland):</strong> 604-683-7151</li>
+                        <li><strong>Email:</strong> Not listed on the official PharmaCare contact page</li>
+                    </ul>
+
+                    <h4>MSP Supplementary Benefits (MSP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://gov.bc.ca/supplementarybenefits" target="_blank">MSP Supplementary Benefits</a></li>
+                        <li><strong>Phone (HIBC):</strong> 1-800-663-7100</li>
+                        <li><strong>Email:</strong> Not listed</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Manitoba -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('mb-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Manitoba Programs</span>
+            </div>
+            <div class="benefit-content" id="mb-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Employment and Income Assistance (EIA)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.mb.ca/fs/eia/" target="_blank">EIA — Manitoba.ca</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-855-944-8111</li>
+                        <li><strong>Email:</strong> Not listed on the main program page</li>
+                    </ul>
+
+                    <h4>EIA for Persons with Disabilities</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.mb.ca/fs/eia/eia_disability.html" target="_blank">EIA for Persons with Disabilities</a></li>
+                        <li><strong>Phone (Winnipeg):</strong> 204-948-4000</li>
+                        <li><strong>Phone (toll-free):</strong> 1-855-944-8111</li>
+                        <li><strong>Email:</strong> Not listed on the program page</li>
+                    </ul>
+
+                    <h4>Manitoba Pharmacare</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.mb.ca/health/pharmacare/general.html" target="_blank">Manitoba Pharmacare</a></li>
+                        <li><strong>Phone:</strong> 204-786-7141</li>
+                        <li><strong>Toll-free:</strong> 1-800-297-8099</li>
+                        <li><strong>Email:</strong> <a href="mailto:pharmacare@gov.mb.ca">pharmacare@gov.mb.ca</a></li>
+                    </ul>
+
+                    <h4>Manitoba Supports for Persons with Disabilities</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://mb.211.ca/detail/85122229/" target="_blank">Manitoba Supports (211 Manitoba)</a></li>
+                        <li><strong>Phone:</strong> 204-948-6773</li>
+                        <li><strong>Toll-free:</strong> 1-877-830-1044</li>
+                        <li><strong>Email:</strong> <a href="mailto:manitobasupports@gov.mb.ca">manitobasupports@gov.mb.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- New Brunswick -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('nb-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">New Brunswick Programs</span>
+            </div>
+            <div class="benefit-content" id="nb-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Disability Support Program (Social Development)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://socialsupportsnb.ca/en/program/disability-support-program" target="_blank">Disability Support Program — Social Supports NB</a></li>
+                        <li><strong>Phone:</strong> 1-833-733-7835</li>
+                        <li><strong>Email:</strong> Not listed on the program page</li>
+                    </ul>
+
+                    <h4>Social Supports NB (program hub)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://socialsupportsnb.ca/" target="_blank">Social Supports NB</a></li>
+                        <li><strong>Phone/Email:</strong> Use the program pages for the specific service (hub page is informational)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Newfoundland and Labrador -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('nl-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Newfoundland and Labrador Programs</span>
+            </div>
+            <div class="benefit-content" id="nl-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Newfoundland and Labrador Disability Benefit (NLDB)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.nl.ca/sswb/newfoundland-and-labrador-disability-benefit/" target="_blank">NLDB — Government of NL</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:SSWBInfo@gov.nl.ca">SSWBInfo@gov.nl.ca</a></li>
+                        <li><strong>Fax:</strong> 1-709-729-6382</li>
+                        <li><strong>Phone:</strong> Not displayed on the program page (use department contact pathways on the page)</li>
+                    </ul>
+
+                    <h4>Disability Policy Office (NL)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.gov.nl.ca/sswb/department/contact-dpo/" target="_blank">Contact the Disability Policy Office</a></li>
+                        <li><strong>Phone:</strong> 709-729-6279</li>
+                        <li><strong>Toll-free:</strong> 1-888-729-6279</li>
+                        <li><strong>Email:</strong> Listed on the department contact page</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Northwest Territories -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('nt-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Northwest Territories Programs</span>
+            </div>
+            <div class="benefit-content" id="nt-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Income Assistance — Government of Northwest Territories (GNWT)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ece.gov.nt.ca/en/services/income-assistance" target="_blank">Income Assistance — GNWT</a></li>
+                        <li><strong>Phone:</strong> 1-866-223-7775</li>
+                        <li><strong>Email:</strong> <a href="mailto:info.ece@gov.nt.ca">info.ece@gov.nt.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Nova Scotia -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('ns-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Nova Scotia Programs</span>
+            </div>
+            <div class="benefit-content" id="ns-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Disability Support Program (DSP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://novascotia.ca/coms/disabilities/index.html" target="_blank">Disability Support Program — Nova Scotia</a></li>
+                        <li><strong>Phone (apply/intake):</strong> 1-877-424-1177</li>
+                        <li><strong>Email:</strong> No direct email listed; uses an online email form (link on the DSP page)</li>
+                    </ul>
+
+                    <h4>Department of Opportunities and Social Development (OSD)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://novascotia.ca/coms/department/contact/index.html" target="_blank">OSD Contact — Nova Scotia</a></li>
+                        <li><strong>Phone (toll-free in NS):</strong> 1-877-424-1177</li>
+                        <li><strong>Email:</strong> Not listed for disability intake (uses office contacts/online options)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Nunavut -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('nu-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Nunavut Programs</span>
+            </div>
+            <div class="benefit-content" id="nu-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Income Assistance — Government of Nunavut</h4>
+                    <ul>
+                        <li><strong>Link (PDF):</strong> <a href="https://www.gov.nu.ca/sites/default/files/files/ia-printversion-eng.pdf" target="_blank">Income Assistance Office Contacts (PDF)</a></li>
+                        <li><strong>Phone/Email:</strong> Listed by community inside the PDF (no single territory-wide number)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Ontario -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('on-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Ontario Programs</span>
+            </div>
+            <div class="benefit-content" id="on-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Ontario Disability Support Program (ODSP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ontario.ca/page/ontario-disability-support-program" target="_blank">ODSP — Ontario.ca</a></li>
+                        <li><strong>Phone (social assistance contact):</strong> 1-888-789-4199</li>
+                        <li><strong>Email:</strong> No single province-wide ODSP email (local office emails vary — use the office locator from the ODSP page)</li>
+                    </ul>
+
+                    <h4>Assistive Devices Program (ADP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ontario.ca/page/assistive-devices-program" target="_blank">Assistive Devices Program — Ontario.ca</a></li>
+                        <li><strong>Phone:</strong> 1-800-268-6021</li>
+                        <li><strong>Email:</strong> <a href="mailto:adp@ontario.ca">adp@ontario.ca</a></li>
+                    </ul>
+
+                    <h4>Trillium Drug Program (TDP)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ontario.ca/page/get-help-high-prescription-drug-costs" target="_blank">Trillium Drug Program — Ontario.ca</a></li>
+                        <li><strong>Phone:</strong> 1-800-575-5386</li>
+                        <li><strong>Email:</strong> <a href="mailto:trillium@ontariodrugbenefit.ca">trillium@ontariodrugbenefit.ca</a></li>
+                    </ul>
+
+                    <h4>Special Services at Home (SSAH)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ontario.ca/page/special-services-home" target="_blank">Special Services at Home — Ontario.ca</a></li>
+                        <li><strong>Phone/Email:</strong> Varies by region. Example (Oshawa office): Phone 1-800-722-1196, Email <a href="mailto:ssah-acsd-oshawa@ontario.ca">ssah-acsd-oshawa@ontario.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Prince Edward Island -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('pei-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Prince Edward Island Programs</span>
+            </div>
+            <div class="benefit-content" id="pei-content">
+                <div class="benefit-content-inner">
+
+                    <h4>AccessAbility Supports</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.princeedwardisland.ca/en/information/social-development-and-seniors/accessability-supports" target="_blank">AccessAbility Supports — PEI.ca</a></li>
+                        <li><strong>Phone (toll-free in PEI):</strong> 1-877-569-0546</li>
+                        <li><strong>Email:</strong> <a href="mailto:DeptSDS@gov.pe.ca">DeptSDS@gov.pe.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Quebec -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('qc-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Quebec Programs</span>
+            </div>
+            <div class="benefit-content" id="qc-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Social Assistance and Social Solidarity (financial assistance programs)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.quebec.ca/famille-et-soutien-aux-personnes/aide-sociale-et-solidarite-sociale" target="_blank">Social Assistance — Québec.ca</a></li>
+                        <li><strong>Phone (Montréal area):</strong> 514-873-4000</li>
+                        <li><strong>Phone (toll-free):</strong> 1-877-767-8773</li>
+                        <li><strong>Email:</strong> Not listed on the page</li>
+                    </ul>
+
+                    <h4>Retraite Québec (QPP disability and other pension services)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.retraitequebec.gouv.qc.ca/en/nous-joindre/Pages/telephone.aspx" target="_blank">Retraite Québec — Phone Contacts</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-800-463-5185</li>
+                        <li><strong>Phone (Montréal):</strong> 514-873-2433</li>
+                        <li><strong>Email:</strong> Not listed as a direct email on the phone contact page</li>
+                    </ul>
+
+                    <h4>Revenu Québec (individual general information line)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.revenuquebec.ca/fr/nous-joindre/renseignements-generaux-pour-les-citoyens/" target="_blank">Revenu Québec — Contact</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-800-267-6299</li>
+                        <li><strong>Email:</strong> Not listed on that page</li>
+                    </ul>
+
+                    <h4>RAMQ (health insurance and public drug plan administrator)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.ramq.gouv.qc.ca/fr/nous-joindre" target="_blank">RAMQ — Contact</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-800-561-9749</li>
+                        <li><strong>Email:</strong> Not listed as a direct email (RAMQ provides "write to us" channels)</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Saskatchewan -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('sk-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Saskatchewan Programs</span>
+            </div>
+            <div class="benefit-content" id="sk-content">
+                <div class="benefit-content-inner">
+
+                    <h4>SAID (Saskatchewan Assured Income for Disability)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.saskatchewan.ca/residents/family-and-social-support/people-with-disabilities/income-support-for-people-with-disabilities" target="_blank">SAID — Saskatchewan.ca</a></li>
+                        <li><strong>Phone:</strong> 1-888-567-7243</li>
+                        <li><strong>TTY:</strong> 1-866-995-0099</li>
+                        <li><strong>Email:</strong> Not listed on the program page</li>
+                    </ul>
+
+                    <h4>SAID Client Service Centre</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.saskatchewan.ca/government/directory?ou=bbe47cc7-386f-4ea9-a05b-2c8e932ea8fe" target="_blank">SAID Client Service Centre — Directory</a></li>
+                        <li><strong>Phone:</strong> 306-798-7243</li>
+                        <li><strong>Toll-free (SK only):</strong> 1-888-567-7243</li>
+                        <li><strong>Email:</strong> Not listed on the directory listing</li>
+                    </ul>
+
+                    <h4>SAIL (Saskatchewan Aids to Independent Living)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.saskatchewan.ca/residents/health/accessing-health-care-services/health-services-for-people-with-disabilities/sail" target="_blank">SAIL — Saskatchewan.ca</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-888-787-8996</li>
+                        <li><strong>Email:</strong> Not listed on the program page</li>
+                    </ul>
+
+                    <h4>SAIL — Government Directory Entry (includes email)</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://www.saskatchewan.ca/government/directory?ou=a5d602b5-49e9-45ad-80ca-5d25180c7228" target="_blank">SAIL — Government Directory</a></li>
+                        <li><strong>Phone (toll-free):</strong> 1-888-787-8996</li>
+                        <li><strong>Email:</strong> <a href="mailto:EHB@health.gov.sk.ca">EHB@health.gov.sk.ca</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Yukon -->
+        <div class="benefit-item">
+            <div class="benefit-trigger" onclick="toggleBenefit('yt-content', this)">
+                <span class="benefit-arrow">▶</span><span class="benefit-title">Yukon Programs</span>
+            </div>
+            <div class="benefit-content" id="yt-content">
+                <div class="benefit-content-inner">
+
+                    <h4>Yukon Social Assistance</h4>
+                    <ul>
+                        <li><strong>Link:</strong> <a href="https://yukon.ca/en/health-and-wellness/social-supports/social-assistance" target="_blank">Social Assistance — Yukon.ca</a></li>
+                        <li><strong>Phone:</strong> 867-667-5674</li>
+                        <li><strong>Email:</strong> <a href="mailto:socialassistance@yukon.ca">socialassistance@yukon.ca</a></li>
                     </ul>
 
                 </div>
@@ -1675,205 +904,6 @@
 </div><!-- end .dbp-widget -->
 
 <script>
-    function toggleBenefit(contentId, trigger) {
-        const content = document.getElementById(contentId);
-        const isOpen = content.classList.toggle('open');
-        trigger.classList.toggle('open');
-
-        if (isOpen) {
-            // Opening: measure exact height of inner wrapper and animate to it
-            content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-            // Closing: lock the page scroll position so it doesn't jump
-            const scrollY = window.scrollY;
-            content.style.maxHeight = '0';
-            // After animation, restore scroll position to prevent page jumping
-            content.addEventListener('transitionend', function() {
-                window.scrollTo({ top: scrollY, behavior: 'instant' });
-            }, { once: true });
-        }
-    }
-
-    function toggleApplySection(sectionId, isChecked) {
-        const section = document.getElementById(sectionId);
-
-        if (isChecked) {
-            const extraHeight = section.scrollHeight;
-            section.style.maxHeight = extraHeight + 'px';
-            // Expand parent benefit-content to fit
-            const benefitContent = section.closest('.benefit-content');
-            if (benefitContent && benefitContent.classList.contains('open')) {
-                benefitContent.style.maxHeight = (parseInt(benefitContent.style.maxHeight) + extraHeight) + 'px';
-            }
-        } else {
-            const removedHeight = parseInt(section.style.maxHeight) || 0;
-            // Shrink parent benefit-content first
-            const benefitContent = section.closest('.benefit-content');
-            if (benefitContent && benefitContent.classList.contains('open')) {
-                benefitContent.style.maxHeight = (parseInt(benefitContent.style.maxHeight) - removedHeight) + 'px';
-            }
-            section.style.maxHeight = '0';
-            // Reset all nested checkboxes and hide methods
-            section.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            const methods = section.querySelector('.apply-methods');
-            if (methods) methods.style.maxHeight = '0';
-        }
-    }
-
-    function checkAllEligibility(className, methodsId) {
-        const checkboxes = document.querySelectorAll('.' + className);
-        const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-        const methods = document.getElementById(methodsId);
-
-        if (allChecked) {
-            const extraHeight = methods.scrollHeight;
-            methods.style.maxHeight = extraHeight + 'px';
-            // Update parent apply-section
-            const applySection = methods.closest('.apply-section');
-            if (applySection && parseInt(applySection.style.maxHeight) > 0) {
-                applySection.style.maxHeight = (parseInt(applySection.style.maxHeight) + extraHeight) + 'px';
-            }
-            // Update parent benefit-content
-            const benefitContent = methods.closest('.benefit-content');
-            if (benefitContent && benefitContent.classList.contains('open')) {
-                benefitContent.style.maxHeight = (parseInt(benefitContent.style.maxHeight) + extraHeight) + 'px';
-            }
-        } else {
-            const removedHeight = parseInt(methods.style.maxHeight) || 0;
-            methods.style.maxHeight = '0';
-            // Shrink parent apply-section
-            const applySection = methods.closest('.apply-section');
-            if (applySection && parseInt(applySection.style.maxHeight) > 0) {
-                applySection.style.maxHeight = (parseInt(applySection.style.maxHeight) - removedHeight) + 'px';
-            }
-            // Shrink parent benefit-content
-            const benefitContent = methods.closest('.benefit-content');
-            if (benefitContent && benefitContent.classList.contains('open')) {
-                benefitContent.style.maxHeight = (parseInt(benefitContent.style.maxHeight) - removedHeight) + 'px';
-            }
-        }
-    }
-
-    function toggleNextStep(stepId, isChecked) {
-        const step = document.getElementById(stepId);
-        if (isChecked) {
-            step.classList.add('visible');
-        } else {
-            step.classList.remove('visible');
-        }
-        updateNextStepsSection();
-    }
-
-    function updateNextStepsSection() {
-        const anyChecked = document.querySelector('.next-step-item.visible') !== null;
-        const section = document.getElementById('next-steps-section');
-        if (anyChecked) {
-            section.classList.add('visible');
-        } else {
-            section.classList.remove('visible');
-        }
-    }
-
-    function handleGapCheckbox(checkbox, continueId) {
-        const group = checkbox.dataset.group;
-        // Uncheck the other option in this group
-        document.querySelectorAll('input[data-group="' + group + '"]').forEach(function(cb) {
-            if (cb !== checkbox) cb.checked = false;
-        });
-
-        const continueSection = document.getElementById(continueId);
-        const continueBtn = continueSection.querySelector('a.gap-continue-btn');
-
-        if (checkbox.checked) {
-            // Set destination link
-            continueBtn.href = checkbox.value === 'a'
-                ? 'https://www.rdspcanada.ca/programs/gap-program-questionnaire'
-                : 'https://www.rdspcanada.ca/programs/guaranteed-access-program';
-
-            // Show and expand parents by adding the delta height
-            if (continueSection.style.display !== 'block') {
-                continueSection.style.display = 'block';
-                var added = continueSection.scrollHeight;
-                var applyMethods = continueSection.closest('.apply-methods');
-                if (applyMethods && parseInt(applyMethods.style.maxHeight) > 0)
-                    applyMethods.style.maxHeight = (parseInt(applyMethods.style.maxHeight) + added) + 'px';
-                var applySection = continueSection.closest('.apply-section');
-                if (applySection && parseInt(applySection.style.maxHeight) > 0)
-                    applySection.style.maxHeight = (parseInt(applySection.style.maxHeight) + added) + 'px';
-                var benefitContent = continueSection.closest('.benefit-content');
-                if (benefitContent && benefitContent.classList.contains('open'))
-                    benefitContent.style.maxHeight = (parseInt(benefitContent.style.maxHeight) + added) + 'px';
-                var nextStepContent = continueSection.closest('.next-step-content');
-                if (nextStepContent && nextStepContent.classList.contains('open'))
-                    nextStepContent.style.maxHeight = (parseInt(nextStepContent.style.maxHeight) + added) + 'px';
-            }
-        } else {
-            // Hide and shrink parents by removing the delta height
-            if (continueSection.style.display === 'block') {
-                var removed = continueSection.scrollHeight;
-                continueSection.style.display = 'none';
-                var applyMethods = continueSection.closest('.apply-methods');
-                if (applyMethods && parseInt(applyMethods.style.maxHeight) > 0)
-                    applyMethods.style.maxHeight = (parseInt(applyMethods.style.maxHeight) - removed) + 'px';
-                var applySection = continueSection.closest('.apply-section');
-                if (applySection && parseInt(applySection.style.maxHeight) > 0)
-                    applySection.style.maxHeight = (parseInt(applySection.style.maxHeight) - removed) + 'px';
-                var benefitContent = continueSection.closest('.benefit-content');
-                if (benefitContent && benefitContent.classList.contains('open'))
-                    benefitContent.style.maxHeight = (parseInt(benefitContent.style.maxHeight) - removed) + 'px';
-                var nextStepContent = continueSection.closest('.next-step-content');
-                if (nextStepContent && nextStepContent.classList.contains('open'))
-                    nextStepContent.style.maxHeight = (parseInt(nextStepContent.style.maxHeight) - removed) + 'px';
-            }
-        }
-    }
-
-    function handleDTCApplyCheckbox(checkbox, continueId) {
-        const group = checkbox.dataset.group;
-        // Uncheck the other option in this group
-        document.querySelectorAll('input[data-group="' + group + '"]').forEach(function(cb) {
-            if (cb !== checkbox) cb.checked = false;
-        });
-
-        const continueSection = document.getElementById(continueId);
-        const continueBtn = continueSection.querySelector('a.gap-continue-btn');
-
-        if (checkbox.checked) {
-            // Set destination link
-            continueBtn.href = checkbox.value === 'with'
-                ? 'https://www.rdspcanada.ca/specialists/dtc-apply-with-assistance'
-                : 'https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2201.html';
-
-            if (continueSection.style.display !== 'block') {
-                continueSection.style.display = 'block';
-                var added = continueSection.scrollHeight;
-                var applyMethods = continueSection.closest('.apply-methods');
-                if (applyMethods && parseInt(applyMethods.style.maxHeight) > 0)
-                    applyMethods.style.maxHeight = (parseInt(applyMethods.style.maxHeight) + added) + 'px';
-                var applySection = continueSection.closest('.apply-section');
-                if (applySection && parseInt(applySection.style.maxHeight) > 0)
-                    applySection.style.maxHeight = (parseInt(applySection.style.maxHeight) + added) + 'px';
-                var benefitContent = continueSection.closest('.benefit-content');
-                if (benefitContent && benefitContent.classList.contains('open'))
-                    benefitContent.style.maxHeight = (parseInt(benefitContent.style.maxHeight) + added) + 'px';
-            }
-        } else {
-            if (continueSection.style.display === 'block') {
-                var removed = continueSection.scrollHeight;
-                continueSection.style.display = 'none';
-                var applyMethods = continueSection.closest('.apply-methods');
-                if (applyMethods && parseInt(applyMethods.style.maxHeight) > 0)
-                    applyMethods.style.maxHeight = (parseInt(applyMethods.style.maxHeight) - removed) + 'px';
-                var applySection = continueSection.closest('.apply-section');
-                if (applySection && parseInt(applySection.style.maxHeight) > 0)
-                    applySection.style.maxHeight = (parseInt(applySection.style.maxHeight) - removed) + 'px';
-                var benefitContent = continueSection.closest('.benefit-content');
-                if (benefitContent && benefitContent.classList.contains('open'))
-                    benefitContent.style.maxHeight = (parseInt(benefitContent.style.maxHeight) - removed) + 'px';
-            }
-        }
-    }
-
     // Mobile nav toggle
     (function() {
         const menuBtn = document.querySelector('.menu-button.w-nav-button');
@@ -1892,8 +922,23 @@
             });
         }
     })();
-</script>
 
+    function toggleBenefit(contentId, trigger) {
+        const content = document.getElementById(contentId);
+        const isOpen = content.classList.toggle('open');
+        trigger.classList.toggle('open');
+
+        if (isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+            const scrollY = window.scrollY;
+            content.style.maxHeight = '0';
+            content.addEventListener('transitionend', function() {
+                window.scrollTo({ top: scrollY, behavior: 'instant' });
+            }, { once: true });
+        }
+    }
+</script>
 
 <div class="section footer rebuild profile"><div class="footer-container w-container"><div class="footer-div"><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5e7d62bc968f476be6fd7ce2_flag-canada-circle-big.png" width="45" height="45" alt="" class="image-2 logo-footer"></div></div><div class="footer-container w-container"><div class="footer-row w-row"><div class="footer-left column-footer footer-col footer-left-col w-col"><p class="paragraph-12 footer-left paragraph-footer"><a href="https://benefits.rdspcanada.ca/programs.html" class="link-3 w--current">Benefits Programs</a><a href="/cdsb-eligibility" class="link-5">Disability Bond</a><a href="https://resources.rdspcanada.ca/" target="_blank" class="link-6">Resources</a><a href="https://www.rdspcanada.ca/programs/additional-programs" target="_blank" class="link-7">Additional Programs</a><a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" class="link-8">Canada Revenue Agency (CRA)</a><a href="https://www.canada.ca/en/services/benefits/finder.html" target="_blank" class="link-9">Benefits Finder</a></p></div><div class="footer-col footer-right-col w-col"><p class="paragraph-11 footer-right"><a href="/terms-of-use" target="_blank" class="link-11">Terms of Use</a><a href="/privacy-policy" target="_blank" class="link-12">Privacy</a><a href="/contact" target="_blank" class="link-13">Contact</a></p></div></div></div><div class="footer-bottom footer-container w-container"><div class="div-block-3"><a href="https://webflow.com/" target="_blank" class="webflow-link w-inline-block"><div class="paragraph-tiny footer-tiny">© RDSP&nbsp;Canada ~ 2026</div></a></div></div></div>
 
