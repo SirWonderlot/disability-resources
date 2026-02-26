@@ -170,9 +170,47 @@
         .navigation-wrap {
             flex: 1;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             position: relative;
+        }
+
+        .logo-link.w-nav-brand {
+            z-index: 1;
+            text-decoration: none;
+            color: #1a1b1f;
+            display: none;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .logo-link:hover { opacity: 0.8; }
+        .logo-link:active { opacity: 0.7; }
+
+        .navigation .columns-5.w-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .navigation .w-col {
+            float: none;
+            width: auto;
+            padding: 0;
+        }
+
+        .navigation .image.logo {
+            display: block;
+            width: 42px;
+            height: auto;
+        }
+
+        .navigation .text-block {
+            padding-left: 10px;
+            font-family: Montserrat, sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1b1f;
+            white-space: nowrap;
         }
 
         .navigation .menu {
@@ -238,6 +276,7 @@
             .navigation.programs { padding: 20px 20px 28px; }
             .navigation.programs.w-nav::after { display: block; left: 20px; right: 20px; width: auto; transform: none; }
 
+            .logo-link.w-nav-brand { display: inline-block; }
             .navigation .menu { justify-content: flex-end; }
 
             .navigation-items.w-nav-menu {
