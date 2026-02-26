@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disability Resources</title> 
+    <title>Disability Resources</title>
+    <link rel="icon" type="image/png" href="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5e7d62bc968f476be6fd7ce2_flag-canada-circle-big.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -14,7 +15,7 @@
         /* Scoped widget styles */
         .dbp-widget {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif !important;
-            max-width: 900px !important; 
+            max-width: 900px !important;
             margin: 0 auto !important;
             padding: 50px 20px 70px !important;
             box-sizing: border-box !important;
@@ -141,27 +142,296 @@
             margin-bottom: 8px !important;
         }
 
+        /* ===== Navigation ===== */
+        .navigation.programs.w-nav {
+            position: relative;
+            z-index: 1000;
+            background-color: white;
+        }
+
+        .navigation.programs.w-nav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            max-width: 100%;
+            height: 1px;
+            background: #ccc;
+        }
+
+        .navigation.programs {
+            display: flex;
+            align-items: center;
+            padding: 30px 50px;
+        }
+
+        .navigation-wrap {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .navigation .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigation-items.w-nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navigation-item.w-nav-link {
+            opacity: 0.6;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 9px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 20px;
+            text-decoration: none;
+            color: #1a1b1f;
+            display: inline-block;
+            font-family: Montserrat, sans-serif;
+            transition: opacity 0.2s;
+        }
+
+        .navigation-item:hover { opacity: 0.9; }
+        .navigation-item.w--current { opacity: 1; font-weight: 600; }
+
+        .navigation .image-4 {
+            display: block;
+            width: 38px;
+            height: auto;
+            margin: 0 6px;
+        }
+
+        /* Hamburger — hidden on desktop */
+        .menu-button.w-nav-button {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            background: none;
+            border: none;
+            z-index: 1;
+            position: relative;
+            pointer-events: auto;
+        }
+
+        .menu-icon.menu-flag {
+            display: block;
+            height: 28px;
+            width: auto;
+        }
+
+        @media screen and (max-width: 991px) {
+            .navigation.programs { padding: 12px 20px; }
+
+            .navigation .menu { justify-content: flex-end; }
+
+            .navigation-items.w-nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 10px 0;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+                border-top: 1px solid #eee;
+                z-index: 999;
+            }
+
+            .navigation-items.w-nav-menu.nav-open { display: flex; }
+
+            .navigation-item.w-nav-link {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 10px 20px;
+            }
+
+            .navigation .image-4 { display: none; }
+            .menu-button.w-nav-button { display: block; }
+        }
+
+        @media screen and (max-width: 479px) {
+            .navigation.programs { padding: 10px 15px; }
+        }
+
         @media (min-width: 768px) {
             .dbp-widget {
                 font-size: 16px !important;
+            }
+        }
+
+        /* ===== Footer ===== */
+        .section.footer.rebuild.profile {
+            background-color: #757474;
+            width: auto;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 20px;
+            padding-bottom: 0;
+        }
+
+        .footer-container.w-container {
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .footer-div {
+            display: flex;
+            justify-content: center;
+            padding: 15px 10px 10px;
+        }
+
+        .image-2.logo-footer {
+            display: block;
+        }
+
+        .footer-row.w-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 15px 0 20px;
+        }
+
+        .footer-col.w-col.footer-left-col {
+            width: 240px;
+            flex-shrink: 0;
+            text-align: right;
+            padding-right: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-col.w-col.footer-right-col {
+            width: 240px;
+            flex-shrink: 0;
+            text-align: left;
+            padding-left: 30px;
+        }
+
+        .paragraph-12.footer-left.paragraph-footer,
+        .paragraph-11.footer-right {
+            color: white;
+            font-size: 13px;
+            line-height: 26px;
+            margin: 0;
+        }
+
+        .link-3, .link-5, .link-6, .link-7, .link-8, .link-9,
+        .link-11, .link-12, .link-13 {
+            color: white !important;
+            text-decoration: none;
+            display: block;
+            font-family: Montserrat, sans-serif;
+            font-size: 13px;
+            line-height: 26px;
+        }
+
+        .link-3:hover, .link-5:hover, .link-6:hover, .link-7:hover,
+        .link-8:hover, .link-9:hover, .link-11:hover, .link-12:hover, .link-13:hover {
+            opacity: 0.75;
+        }
+
+        .footer-full-divider {
+            width: 100%;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-bottom.footer-container {
+            padding-top: 12px;
+            padding-bottom: 14px;
+            text-align: center;
+        }
+
+        .div-block-3 {
+            display: inline-block;
+        }
+
+        .webflow-link.w-inline-block {
+            opacity: 0.75;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .webflow-link.w-inline-block:hover {
+            opacity: 1;
+        }
+
+        .paragraph-tiny {
+            color: white;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .paragraph-tiny.footer-tiny {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen and (max-width: 600px) {
+            .footer-row.w-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-col.w-col.footer-left-col {
+                text-align: center;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+                padding-right: 0;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
+
+            .footer-col.w-col.footer-right-col {
+                text-align: center;
+                padding-left: 0;
             }
         }
     </style>
 </head>
 <body>
 
+<div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation programs w-nav"><div class="navigation-wrap"><a href="/cdsb-eligibility" class="logo-link w-nav-brand"><div class="columns-5 w-row"><div class="column-6 w-col w-col-6 w-col-medium-6"></div><div class="column-5 w-col w-col-6 w-col-medium-6"></div></div></a><div class="menu"><nav role="navigation" class="navigation-items w-nav-menu"><a href="https://www.rdspcanada.ca/cdsb-eligibility" class="navigation-item w-nav-link">Disability Bond</a><a href="https://benefits.rdspcanada.ca/programs.html" class="navigation-item w-nav-link">Benefits Programs</a><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5e7d62bc968f476be6fd7ce2_flag-canada-circle-big.png" loading="lazy" width="50" alt="" class="image-4"><a href="https://www.rdspcanada.ca/programs/additional-programs" class="navigation-item w-nav-link">Additional Programs</a><a href="https://resources.rdspcanada.ca/" class="navigation-item w-nav-link">Resources</a></nav><div class="menu-button w-nav-button" aria-label="menu" role="button" tabindex="0" aria-expanded="false"><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5f66ba195f18246d973acac7_menu-mobile.png" height="30" alt="" class="menu-icon menu-flag"></div></div></div></div>
+
 <div class="dbp-widget">
 
-    <h1>Disability Resources</h1>
+    <h2>5.1 Disability Resources</h2>
 
     <section>
-        <p>Click on a heading below to expand contact and program information for that region.</p>
+        <h2 style="font-size: 1em !important;">How to Use This Page</h2>
+        <p>This page is designed to help you quickly find contact information and access points for disability benefit programs across Canada.</p>
+        <p>At the top of the page, you will see expandable sections labeled Federal Programs and each Province or Territory. These sections organize programs by region so you can easily locate the services that apply to you.</p>
+        <p>To use the page, simply click on the heading for the region you want. For example, click Federal Programs to view nationwide disability programs, or click your province (such as Alberta, Ontario, etc.) to see programs available in that specific region.</p>
+        <p>When you click a heading, it will expand and display detailed information, which may include:</p>
+        <ul>
+            <li>Program names</li>
+            <li>Direct website links</li>
+            <li>Phone numbers</li>
+            <li>Email or contact form information</li>
+            <li>A short description of what the program provides</li>
+        </ul>
+        <p>Review the listed programs and use the provided contact details or links to reach the appropriate government department or service. These contacts will guide you on eligibility, applications, and accessing disability benefits available to you.</p>
+        <p>You may open and close different regions at any time to compare programs or find additional supports.</p>
     </section>
 
     <hr class="section-divider">
 
     <section>
-        <h2>Programs and Contacts</h2>
+        <h2>5.2 Programs and Contacts</h2>
 
         <!-- Federal -->
         <div class="benefit-item">
@@ -628,6 +898,25 @@
 </div><!-- end .dbp-widget -->
 
 <script>
+    // Mobile nav toggle
+    (function() {
+        const menuBtn = document.querySelector('.menu-button.w-nav-button');
+        const navMenu = document.querySelector('.navigation-items.w-nav-menu');
+        if (menuBtn && navMenu) {
+            menuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isOpen = navMenu.classList.toggle('nav-open');
+                menuBtn.setAttribute('aria-expanded', isOpen);
+            });
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.navigation.programs.w-nav')) {
+                    navMenu.classList.remove('nav-open');
+                    menuBtn.setAttribute('aria-expanded', false);
+                }
+            });
+        }
+    })();
+
     function toggleBenefit(contentId, trigger) {
         const content = document.getElementById(contentId);
         const isOpen = content.classList.toggle('open');
@@ -644,6 +933,8 @@
         }
     }
 </script>
+
+<div class="section footer rebuild profile"><div class="footer-container w-container"><div class="footer-div"><img src="https://cdn.prod.website-files.com/5e7d62bc968f474458fd7c90/5e7d62bc968f476be6fd7ce2_flag-canada-circle-big.png" width="45" height="45" alt="" class="image-2 logo-footer"></div></div><div class="footer-container w-container"><div class="footer-row w-row"><div class="footer-left column-footer footer-col footer-left-col w-col"><p class="paragraph-12 footer-left paragraph-footer"><a href="https://benefits.rdspcanada.ca/programs.html" class="link-3 w--current">Benefits Programs</a><a href="/cdsb-eligibility" class="link-5">Disability Bond</a><a href="https://resources.rdspcanada.ca/" target="_blank" class="link-6">Resources</a><a href="https://www.rdspcanada.ca/programs/additional-programs" target="_blank" class="link-7">Additional Programs</a><a href="https://www.canada.ca/en/revenue-agency.html" target="_blank" class="link-8">Canada Revenue Agency (CRA)</a><a href="https://www.canada.ca/en/services/benefits/finder.html" target="_blank" class="link-9">Benefits Finder</a></p></div><div class="footer-col footer-right-col w-col"><p class="paragraph-11 footer-right"><a href="/terms-of-use" target="_blank" class="link-11">Terms of Use</a><a href="/privacy-policy" target="_blank" class="link-12">Privacy</a><a href="/contact" target="_blank" class="link-13">Contact</a></p></div></div></div><div class="footer-bottom footer-container w-container"><div class="div-block-3"><a href="https://webflow.com/" target="_blank" class="webflow-link w-inline-block"><div class="paragraph-tiny footer-tiny">© RDSP&nbsp;Canada ~ 2026</div></a></div></div></div>
 
 </body>
 </html>
